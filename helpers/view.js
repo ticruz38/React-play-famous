@@ -26,7 +26,7 @@
             }.bind(this);
 
             this.id = Entity.register(this);
-            this._element = options.element;
+            this._element = this.options.element ? this.options.element : document.createElement('div');
             this._childElements = [];
 
             this.transitionable = _setTransitionable();
@@ -201,29 +201,34 @@
             this._optionsManager.patch(options);
         };
 
-        View.prototype.setData = function (data, templates) {
-            var that = this;
-            if (this.handle) {
-                this.handle.stop();
-                this.removeChilds(this);
+        View.prototype.setElement = function setElement(el) {
+            if (this._element.parentNode) {
+                this._element.parentNode.removeChild(this._element);
             }
-            var handle = data.observe({
-                addedAt: function (doc, atIndex, before) {
-                    var options = {
-                        template: templates ? templates[atIndex] : that.options.childTemplates,
-                        data: doc
-                    };
-                    var addedView = new View(options);
-                    that.push(addedView, atIndex);
-                    if (that.setState) that.setState(that.context, that._childElements);
-                    _onChild.call(that, addedView); // setting by default but should'nt
-                },
-                removedAt: function (doc, atIndex, before) {
-                    var removedView = that._childElements[atIndex];
-                    removedView.remove();
+            this._element = el;
+        }
+
+        View.prototype.setChild = function setChild(object) {
+            if (object instanceof Array) {
+                object.forEach(function (child) {
+                    if (!child instanceof View) {
+                        child = new View({
+                            element: child
+                        });
+                        this._childElements.push(child);
+                    }
+                    this._childElements.push(child);
+                });
+            } else {
+                if (!(object instanceof View)) {
+                    object = new View({
+                        element: object
+                    });
+                    this._childElements.push(object);
+                } else {
+                    this._childElements.push(object);
                 }
-            });
-            this.handle = handle;
+            }
         }
 
         View.prototype.setModifier = function (Modifier) {
@@ -239,34 +244,6 @@
             }
             this.setState(this.context, this._childElements);
             //        this._eventInput.emit('refresh');
-        }
-
-        View.prototype.setChildTemplate = function (template) {
-            if (this._childElements) this._childElements.forEach(function (view, i) {
-                view.setTemplate(template);
-                _onChild.call(this, view);
-                this._eventInput.emit('refresh');
-            }.bind(this));
-        }
-
-        View.prototype.setTemplate = function (template) {
-            var blazeView;
-            var element;
-            if (this.options.data) {
-                blazeView = Blaze.renderWithData(template, this.options.data, document.body, this._element);
-                element = blazeView.firstNode();
-            } else {
-                blazeView = Blaze.render(template, document.body, this._element);
-                element = blazeView.firstNode();
-            }
-            if (this.blazeView) {
-                Blaze.remove(this.blazeView);
-            } else {
-                document.body.removeChild(this._element);
-            }
-            this.blazeView = blazeView
-            this._element = element;
-            this._eventInput.emit('refresh');
         }
 
         View.prototype.push = function (view, index, replace) {

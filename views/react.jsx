@@ -1,10 +1,17 @@
 var React = require('react/addons');
 var data = require('../data/food.json');
 var View = require('../helpers/view');
+var gridLayout = require('../modifier/gridlayout');
 
 var Engine = require('famous/core/Engine');
 
 var Context = Engine.createContext();
+
+var MainView = new View();
+MainView.setModifier(gridLayout);
+
+
+Context.add(MainView);
 
 var IndexPage = React.createClass({
 
@@ -15,10 +22,7 @@ var IndexPage = React.createClass({
     },
 
     componentDidMount: function () {
-        this.famous = new View({
-            element : this.getDOMNode()
-        });
-        Context.add(this.famous);
+        MainView.setElement(this.getDOMNode());
     },
 
     onClickLogged: function () {
@@ -33,8 +37,9 @@ var IndexPage = React.createClass({
             <h1>Ambrosia</h1>
             <div> {logged} </div>
                 <FoodEntityList>
-                {this.props.datas.map(function (data) {
-                    return <FoodEntity type = {data.type} />
+                {this.props.datas.map(function (data, index) {
+                    console.log(index);
+                    return <FoodEntity key = {index} type = {data.type} />
                 })}
                 </FoodEntityList>
             </div>
@@ -43,19 +48,26 @@ var IndexPage = React.createClass({
 });
 
 var FoodEntityList =React.createClass({
+
     render: function () {
     return (
-        <ul>
+        <div>
         {this.props.children}
-        </ul>
+        </div>
         );
     }
 })
 
 var FoodEntity = React.createClass({
+
+    componentDidMount: function () {
+    console.log('FoodEntity');
+        MainView.setChild(this.getDOMNode());
+    },
+
     render: function () {
         return (
-        <div className = 'foodEntity-container'>
+        <div className = 'famous-surface'>
             <h1> {this.props.type} </h1>
             <img className = 'foodEntity-image' />
         </div>
