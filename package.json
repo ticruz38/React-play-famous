@@ -10,13 +10,14 @@
         "gulp-util": "^3.0.4",
         "react": "^0.13.0",
         "reactify": "^1.1.0",
+        "sassify": "^0.7.0",
         "watchify": "^2.4.0"
     },
     "browserify": {
         "transform": [
       "reactify",
-        "cssify"
-    ]
+      "cssify"
+        ]
     },
     "main": "app.js",
     "scripts": {
