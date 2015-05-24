@@ -23,7 +23,7 @@
     left: 0px;
     bottom: 0px;
     right: 0px;
-    overflow: visible;
+    /*overflow: visible;*/
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-backface-visibility: visible;

@@ -1,64 +1,60 @@
-data = [
-            {
-                type: "Burger",
-                entities: [
-                    {
-                        name: "Big Mac",
-                        snippet: "classical Macdonald Burger",
-                        availability: true,
-                        id: 0,
-                        ingredients: ['broat',
-                                'tomato',
-                                'cheese',
-                                'cornichon']
-                 },
-                    {
-                        name: "Giant Classic",
-                        snippet: "classical Burger king",
-                        availability: true,
-                        id: 1,
-                        ingredients: ['broat',
-                                'steak',
-                                'cheese',
-                                'ketchup']
-                 }]
-            },
-            {
-                type: "Entry",
-                entities: [
-                    {
-                        name: "French Salad",
-                        snippet: "Classic French Salad",
-                        availability: false,
-                        ingredients: ['salad',
-                                'tomato',
-                                'cheddar']
-                 },
-                    {
-                        name: 'greek salad',
-                        snippet: 'Classic Greek Salad',
-                        availability: true,
-                        ingredients: ['salad',
-                                'tomato',
-                                'salakis',
-                                'brebis']
-                 }]
-            },
-            {
-                type: "Drink",
-                entities: [
-                    {
-                        name: "Coca-Cola",
-                        snippet: "Most Famous drink around the world",
-                        availability: true,
-                        ingredients: []
-                            },
-                    {
-                        name: 'Fischer',
-                        snippet: "Alsacian Beer",
-                        availability: true,
-                        ingredients: ['malt',
-                                              'love']
-                            }]
-                    }];
+data = [{
+  type: "Burger",
+  entities: [{
+    name: "Big Mac",
+    snippet: "classical Macdonald Burger",
+    availability: true,
+    id: 0,
+    ingredients: ['broat',
+      'tomato',
+      'cheese',
+      'cornichon'
+    ]
+  }, {
+    name: "Giant Classic",
+    snippet: "classical Burger king",
+    availability: true,
+    id: 1,
+    ingredients: ['broat',
+      'steak',
+      'cheese',
+      'ketchup'
+    ]
+  }]
+}, {
+  type: "Entry",
+  entities: [{
+    name: "French Salad",
+    snippet: "Classic French Salad",
+    availability: false,
+    ingredients: ['salad',
+      'tomato',
+      'cheddar'
+    ]
+  }, {
+    name: 'greek salad',
+    snippet: 'Classic Greek Salad',
+    availability: true,
+    ingredients: ['salad',
+      'tomato',
+      'salakis',
+      'brebis'
+    ]
+  }]
+}, {
+  type: "Drink",
+  entities: [{
+    name: "Coca-Cola",
+    snippet: "Most Famous drink around the world",
+    availability: true,
+    ingredients: []
+  }, {
+    name: 'Fischer',
+    snippet: "Alsacian Beer",
+    availability: true,
+    ingredients: ['malt',
+      'love'
+    ]
+  }]
+}];
 module.exports = data;
