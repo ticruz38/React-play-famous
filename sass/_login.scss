@@ -1,0 +1,70 @@
+$yellow: #eff529;
+$yellow-light: #fbf79b;
+$yellow-dark: #d2c800;
+
+div.modal-container {
+    border: 4px solid black;
+    @include border-radius(5px);
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+}
+div.header-container {
+    border-bottom: 1px solid black;
+    height: 20%;
+}
+div.body-container {
+    border-bottom: 1px solid black;
+    height: 60%;
+}
+
+div.footer-container {
+    height: 20%;
+}
+
+h2.log {
+  font-family: Bebas;
+  padding-top:10%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+h1.log {
+  font-family: bebas;
+  padding-top:10%;
+  text-align:center;
+}
+
+input.log {
+  background-color: $yellow-light;
+  text-align: center;
+  font-size: 120%;
+  //border: none;
+  height: 10%;
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+p.log {
+  margin-top: 15%;
+  margin-left: 10%;
+  display: inline-block;
+  float:left
+}
+
+input.submit-button {
+  background-color: $yellow;
+  vertical-align:center;
+  border: 1px solid black;
+  margin: 10%;
+  cursor: pointer;
+  float: right;
+  height: 40%;
+  width: 30%;
+  font-size: 100%;
+  @include border-radius(5px);
+  &:hover {
+    background-color: $yellow-dark;
+  }
+}

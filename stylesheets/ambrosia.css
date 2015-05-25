@@ -1,0 +1,316 @@
+/* line 1, ../sass/_professional.scss */
+h1.pro {
+  font-size: 1em;
+}
+
+/* line 5, ../sass/_professional.scss */
+div#pro {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1em;
+}
+/* line 8, ../sass/_professional.scss */
+div#pro h1 {
+  font-size: 1em;
+}
+/* line 11, ../sass/_professional.scss */
+div#pro h3 {
+  font-size: 0.7em;
+}
+/* line 14, ../sass/_professional.scss */
+div#pro p, div#pro a {
+  font-size: 0.5em;
+}
+
+/* line 18, ../sass/_professional.scss */
+span.open {
+  font-size: inherit;
+  margin: 0.5em;
+  padding: 0.5em;
+  opacity: 0.9;
+}
+
+/* line 26, ../sass/_professional.scss */
+input.open, textarea.open {
+  padding: none !important;
+  width: 80%;
+  font-size: inherit;
+  margin: 0.5em;
+}
+
+/* line 1, ../sass/_auth.scss */
+span.log {
+  margin: 1em;
+  font-family: "Bebas";
+  font-size: 50%;
+}
+
+/* line 6, ../sass/_auth.scss */
+div.form {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 12, ../sass/_auth.scss */
+input.signup, input.login {
+  margin: 1em;
+  width: 50%;
+  font-size: 100%;
+  text-align: center;
+}
+
+/* line 21, ../sass/_auth.scss */
+div.social {
+  padding: 0.2em;
+  display: table-cell;
+  cursor: pointer;
+  font-size: 50%;
+  border: 1px solid black;
+}
+
+/* line 28, ../sass/_auth.scss */
+input.submit {
+  text-align: center;
+  margin: 1em;
+  font-size: 50%;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+  width: 30%;
+}
+
+/* line 37, ../sass/_auth.scss */
+.error {
+  display: block;
+  font-size: 50%;
+  font-style: italic;
+  color: #cc0404;
+}
+
+/* line 43, ../sass/_auth.scss */
+form#signup,
+form#login {
+  display: table-cell;
+  padding: 1em;
+  backface-visibility: hidden;
+}
+/* line 45, ../sass/_auth.scss */
+form#signup span.close-icon,
+form#login span.close-icon {
+  background-image: url("/public/icons/close.svg");
+  float: right;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* line 57, ../sass/_auth.scss */
+.logout-icon {
+  background-image: url("/public/icons/logout.svg");
+}
+
+/* line 61, ../sass/_auth.scss */
+.question {
+  margin: 2em;
+  font-size: 50%;
+}
+
+/* line 1, ../sass/_openarestaurant.scss */
+div.openarestaurant {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+/* line 4, ../sass/_openarestaurant.scss */
+div.openarestaurant .plus-icon {
+  background-image: url("/public/icons/plus-icon.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+/* line 12, ../sass/_openarestaurant.scss */
+div.openarestaurant div.container {
+  margin-top: 1em;
+  display: flex;
+  /* height: 15%; */
+  font-size: 2vmin;
+  text-align: center;
+  flex-flow: row wrap;
+}
+/* line 19, ../sass/_openarestaurant.scss */
+div.openarestaurant div.container a.item {
+  border: 1px solid black;
+  width: 10%;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+/* line 26, ../sass/_openarestaurant.scss */
+div.openarestaurant div.container a.active {
+  flex-grow: 1.5;
+  background-color: rgba(17, 141, 48, 0.81);
+}
+/* line 31, ../sass/_openarestaurant.scss */
+div.openarestaurant div.list-container {
+  display: block;
+  margin: 1em;
+  /* height: 15%; */
+  font-size: 50%;
+  text-align: center;
+  flex-flow: row wrap;
+  /* border: 1px solid black;*/
+}
+/* line 41, ../sass/_openarestaurant.scss */
+div.openarestaurant div.list-container div.card-item {
+  margin-bottom: 1em;
+  width: 30%;
+  height: 8em;
+  /* flex-grow: 1;*/
+}
+/* line 49, ../sass/_openarestaurant.scss */
+div.openarestaurant div.list-container div.card-item input {
+  font-size: 1em;
+  width: 60%;
+  border: none;
+}
+/* line 54, ../sass/_openarestaurant.scss */
+div.openarestaurant div.list-container div.card-item span.close-icon {
+  background-image: url("/public/icons/close.svg");
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  display: table-cell;
+  position: absolute;
+}
+/* line 62, ../sass/_openarestaurant.scss */
+div.openarestaurant div.list-container div.card-item .unvisible {
+  position: absolute;
+  width: 0;
+  margin-top: 2em;
+  z-index: -1;
+}
+/* line 68, ../sass/_openarestaurant.scss */
+div.openarestaurant div.list-container div.card-item img {
+  width: 100%;
+  height: 7em;
+  border: 1px solid black;
+}
+
+@font-face {
+  font-family: "Bebas";
+  src: url(/public/fonts/Bebas/Bebas-webfont.eot);
+  src: url(/public/fonts/Bebas/Bebas-webfont.eot?#iefix) format('embedded-opentype'), url(/public/fonts/Bebas/Bebas-webfont.woff) format('woff'), url(/public/fonts/Bebas/Bebas-webfont.ttf) format('truetype'), url(/public/fonts/Bebas/Bebas-webfont.svg) format('svg');
+}
+/* line 7, ../sass/ambrosia.scss */
+.famous-surface, div.auth, form#signup,
+form#login, div.openarestaurant div.list-container div.card-item, .list, .list-item, .burger-button, input.search {
+  position: absolute;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+}
+
+/* line 21, ../sass/ambrosia.scss */
+.famous-container, .famous-group {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  /*overflow: visible;*/
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  pointer-events: none;
+}
+
+/* line 34, ../sass/ambrosia.scss */
+.famous-group {
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 42, ../sass/ambrosia.scss */
+.famous-container-group {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 50, ../sass/ambrosia.scss */
+.hidden {
+  display: none;
+}
+
+/* line 55, ../sass/ambrosia.scss */
+.list-item:hover {
+  cursor: pointer;
+  font-emphasize: right;
+}
+
+/* line 61, ../sass/ambrosia.scss */
+.body {
+  text-align: justify;
+  overflow: scroll;
+}
+
+/* line 65, ../sass/ambrosia.scss */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 69, ../sass/ambrosia.scss */
+.title {
+  font-size: 2em;
+  font-style: bold;
+  margin: 2em;
+}
+
+/* line 74, ../sass/ambrosia.scss */
+.button {
+  display: table-cell;
+  text-align: center;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0.2em;
+  font-size: 100%;
+  border: 1px solid black;
+}
+
+/* line 85, ../sass/ambrosia.scss */
+.burger-button:hover {
+  cursor: pointer;
+}
+
+/* line 89, ../sass/ambrosia.scss */
+h1.ambrosia {
+  font-family: 'Bebas';
+  margin: 0;
+}
+
+/* line 93, ../sass/ambrosia.scss */
+.home-page {
+  background-image: url("/public/images/burger.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* line 98, ../sass/ambrosia.scss */
+input.search {
+  border: 1px solid;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
