@@ -154,6 +154,7 @@ Open.secondStep = React.createClass({
   },
 
   getInitialState: function () {
+    console.log(this.getStore(ProStore).getState());
     return this.getStore(ProStore).getState();
   },
 
@@ -169,19 +170,30 @@ Open.secondStep = React.createClass({
   render: function () {
     return(
       <div>
-        <CardList items={this.state.items}/>
         <div className='plus-icon' onClick={this.add}/>
+        <CardList items={this.state.items}/>
       </div>
     );
   }
 });
 
+var ReactTransitionGroup = React.addons.TransitionGroup;
+
+var CardModifier = require('../famous-modifier/cardlayout');
+CardModifier = new CardModifier();
+
 var CardList = React.createClass({
+
+  componentDidMount: function () {
+    var childs = React.findDOMNode(this.refs.listcontainer).children;
+    BodyView.setChild(childs);
+    BodyView.setModifier(CardModifier);
+  },
   render: function () {
     var createItem = function(item, index) {
-      return <CardItem key={index} item={item}/>;
+      return <CardItem key={index} index = {index} item={item}/>;
     };
-    return <div className='list-container'>{this.props.items.map(createItem)}</div>;
+    return <ReactTransitionGroup component='div' className='list-container' ref='listcontainer'>{this.props.items.map(createItem)}</ReactTransitionGroup>;
   }
 });
 
@@ -194,7 +206,6 @@ var CardItem = React.createClass({
   },
 
   onChange: function (e) {
-    console.log(e);
     this.setState({name: e.target.value});
   },
 
@@ -206,16 +217,24 @@ var CardItem = React.createClass({
     }
   },
 
+  close: function () {
+    console.log(this.props.index);
+    this.getStore(ProStore).remove(this.props.index);
+  },
+
+  componentWillLeave: function (cb) {
+    CardModifier.remove(this.props.index, cb);
+    //BodyView.removeChild(this.props.index);
+  },
+
   componentDidMount: function () {
-    console.log(this.getDOMNode());
     BodyView.setChild(this.getDOMNode());
-    BodyView.setModifier(require('../famous-modifier/cardlayout'));
   },
 
   render: function () {
     return(
       <div className = 'card-item'>
-      <span className = 'close-icon'/>
+      <span className = 'close-icon' onClick={this.close}/>
       <span className = {this.state.hidden ? '' : 'hidden'} onClick={this.switch}>{this.state.name}</span>
       <input className = {this.state.hidden ? 'unvisible' : ''} ref='input' onChange={this.onChange} value={this.state.name} onKeyDown={function(e) {if (e.keyCode === 13) this.switch();}.bind(this)}/>
       <img src={this.state.picture}></img>

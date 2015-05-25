@@ -18,6 +18,13 @@ var ProStore = createStore({
         }];
     },
 
+    remove: function (id) {
+      console.log(id);
+      this.items.splice(id, 1);
+      console.log(this.items);
+      this.emitChange();
+    },
+
     getState: function() {
         return {
             items: this.items

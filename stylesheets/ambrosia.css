@@ -116,7 +116,6 @@ form#login span.close-icon {
 /* line 1, ../sass/_openarestaurant.scss */
 div.openarestaurant {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 1em;
 }
 /* line 4, ../sass/_openarestaurant.scss */
 div.openarestaurant .plus-icon {
@@ -125,21 +124,18 @@ div.openarestaurant .plus-icon {
   background-size: 100% 100%;
   width: 1em;
   height: 1em;
-  float: right;
-  margin-right: 0.5em;
   cursor: pointer;
 }
-/* line 14, ../sass/_openarestaurant.scss */
+/* line 12, ../sass/_openarestaurant.scss */
 div.openarestaurant div.container {
-  margin: 1em;
+  margin-top: 1em;
   display: flex;
   /* height: 15%; */
-  font-size: 50%;
+  font-size: 2vmin;
   text-align: center;
   flex-flow: row wrap;
-  /* border: 1px solid black;*/
 }
-/* line 23, ../sass/_openarestaurant.scss */
+/* line 19, ../sass/_openarestaurant.scss */
 div.openarestaurant div.container a.item {
   border: 1px solid black;
   width: 10%;
@@ -147,12 +143,12 @@ div.openarestaurant div.container a.item {
   background-color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
-/* line 30, ../sass/_openarestaurant.scss */
+/* line 26, ../sass/_openarestaurant.scss */
 div.openarestaurant div.container a.active {
   flex-grow: 1.5;
   background-color: rgba(17, 141, 48, 0.81);
 }
-/* line 35, ../sass/_openarestaurant.scss */
+/* line 31, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container {
   display: block;
   margin: 1em;
@@ -162,20 +158,20 @@ div.openarestaurant div.list-container {
   flex-flow: row wrap;
   /* border: 1px solid black;*/
 }
-/* line 46, ../sass/_openarestaurant.scss */
+/* line 41, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item {
   margin-bottom: 1em;
   width: 30%;
   height: 8em;
   /* flex-grow: 1;*/
 }
-/* line 54, ../sass/_openarestaurant.scss */
+/* line 49, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item input {
   font-size: 1em;
   width: 60%;
   border: none;
 }
-/* line 59, ../sass/_openarestaurant.scss */
+/* line 54, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item span.close-icon {
   background-image: url("/public/icons/close.svg");
   width: 1em;
@@ -184,14 +180,14 @@ div.openarestaurant div.list-container div.card-item span.close-icon {
   display: table-cell;
   position: absolute;
 }
-/* line 67, ../sass/_openarestaurant.scss */
+/* line 62, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item .unvisible {
   position: absolute;
   width: 0;
   margin-top: 2em;
   z-index: -1;
 }
-/* line 73, ../sass/_openarestaurant.scss */
+/* line 68, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item img {
   width: 100%;
   height: 7em;
