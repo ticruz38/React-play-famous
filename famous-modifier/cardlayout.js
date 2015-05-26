@@ -57,10 +57,11 @@ Modifier.prototype.switchState = function() {
   this.activeState(transition);
 };
 
-Modifier.prototype.remove = function(id, cb) {
+Modifier.prototype.remove = function(id, cb, view) {
   var element = this.elements[id];
   element.transitionable.size.set([0, 0], transition, function() {
     cb();
+    view.removeChild(id);
   });
 };
 

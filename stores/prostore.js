@@ -14,14 +14,18 @@ var ProStore = createStore({
     initialize: function() {
         this.items = [{
           name: 'drink',
-          picture: '/public/images/drink.jpg'
+          picture: '/public/images/drink.jpg',
+          id: 'abcd'
         }];
     },
 
     remove: function (id) {
-      console.log(id);
       this.items.splice(id, 1);
-      console.log(this.items);
+      this.emitChange();
+    },
+
+    add: function (item) {
+      this.items = this.items.concat([item]);
       this.emitChange();
     },
 

@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "ambrosia",
     "version": "0.0.0",
     "license": "MIT",
@@ -19,8 +18,7 @@
     "scripts": {
         "build": "browserify app.js -o bundle.js",
         "watch": "watchify app.js -o bundle.js --debug --verbose"
-    }
-=======
+    },
   "name": "ambrosia",
   "version": "0.0.0",
   "license": "MIT",
@@ -70,5 +68,4 @@
     "lint": "grunt jshint",
     "test": "jest"
   }
->>>>>>> branch-name
 }

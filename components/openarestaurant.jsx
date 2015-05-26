@@ -163,8 +163,8 @@ Open.secondStep = React.createClass({
   },
 
   add: function () {
-    this.state.items = this.state.items.concat([{name: 'name', picture: ''}]);
-    this.getStore(ProStore).rehydrate(this.state);
+    var item = {name: 'name', picture: '', id: Math.random().toString(36).substring(7)};
+    this.getStore(ProStore).add(item);
   },
 
   render: function () {
@@ -191,7 +191,7 @@ var CardList = React.createClass({
   },
   render: function () {
     var createItem = function(item, index) {
-      return <CardItem key={index} index = {index} item={item}/>;
+      return <CardItem key={item.id} index = {index} item={item}/>;
     };
     return <ReactTransitionGroup component='div' className='list-container' ref='listcontainer'>{this.props.items.map(createItem)}</ReactTransitionGroup>;
   }
@@ -223,7 +223,7 @@ var CardItem = React.createClass({
   },
 
   componentWillLeave: function (cb) {
-    CardModifier.remove(this.props.index, cb);
+    CardModifier.remove(this.props.index, cb, BodyView);
     //BodyView.removeChild(this.props.index);
   },
 

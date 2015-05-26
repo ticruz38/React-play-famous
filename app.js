@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 //var fs = require('graceful-fs');
-require('./views/react.jsx');
-=======
 'use strict';
 
 var Fluxible = require('fluxible');
@@ -20,4 +17,3 @@ app.registerStore(require('./stores/authstore'));
 app.registerStore(require('./stores/prostore'));
 
 module.exports = app;
->>>>>>> branch-name
