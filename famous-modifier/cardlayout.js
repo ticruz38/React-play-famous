@@ -1,22 +1,22 @@
-/*global ListLayout */
 var Easing = require('famous/transitions/Easing');
-var Transitionable = require('famous/transitions/Transitionable');
 
 function Modifier() {
+  this.elements = [];
   this.activeState = _initialState;
   this.state = 0;
 }
 
 var transition = {
-  duration: 600,
+  duration: 400,
   curve: Easing.outBack
 };
-
-var color = new Transitionable(30);
 
 function _initialState(trans) {
   var gutter = this.size[0] / 16;
   var x = this.size[0] / 8;
+  var y = 0;
+  var height = this.elements[0]._element.clientHeight;
+  console.log(height);
   this.elements.forEach(function(element, i) {
     if (!element.transitionable.initialize) {
       _initialize.call(this, element, x);
@@ -24,9 +24,13 @@ function _initialState(trans) {
       element.transitionable.initialize = true;
     }
     element.transitionable.origin.set([0.5, 0]);
-    element.transitionable.size.set([this.size[0] / 4, this.size[0] / 4], trans);
-    element.transitionable.transform.setTranslate([x, 0, 0], trans);
+    element.transitionable.size.set([this.size[0] / 4, height], trans);
+    element.transitionable.transform.setTranslate([x, y, 0], trans);
     x += this.size[0] / 4 + gutter;
+    if(x > this.size[0]) {
+      y += height + gutter;
+      x = this.size[0] / 8;
+    }
     //element._element.style.backgroundColor = 'hsl(' + color.get() + ', 75%, 50%)';
   }.bind(this));
 }
@@ -36,33 +40,30 @@ function _initialize(element, x) {
   element.transitionable.transform.setTranslate([x, 0, 0]);
 }
 
-function _menuState(trans) {
-  this.home.transitionable.size.set([this.size[0] * 0.75, this.size[1] * 0.75], trans);
-  this.home.transitionable.transform.setTranslate([(this.size[0] / 2) + (this.size[0] / 4), this.size[1] / 2, 0], trans);
-  color.set(90, trans);
-  this.home._element.style.backgroundColor = 'hsl(' + color.get() + ', 75%, 50%)'; //need to handle it view commit side
-}
-
 Modifier.prototype.setState = function(context, elements) {
   if (!context) return;
-  this.elements = elements;
   this.size = context.size;
-  this.activeState();
+  var trans = (this.elements.length !== elements.length) ? null : transition;
+  console.log(trans, this.elements.length !== elements.length);
+  this.elements = elements;
+  this.activeState(trans);
 };
 
-Modifier.prototype.switchState = function() {
-  ListLayout.switchState();
-  this.activeState = this.state ? _initialState : _menuState;
-  this.state = !this.state;
-  this.activeState(transition);
-};
 
 Modifier.prototype.remove = function(id, cb, view) {
   var element = this.elements[id];
-  element.transitionable.size.set([0, 0], transition, function() {
+  element.transitionable.opacity.set(0, transition);
+  element.transitionable.size.set([0, 0], transition, function () {
     cb();
     view.removeChild(id);
   });
+};
+
+Modifier.prototype.focus = function (id) {
+  var element = this.elements[id];
+  var height = element._element.clientHeight;
+  element.transitionable.size.set([this.size[0] * 0.75 , 2 * height], transition);
+  element.transitionable.transform.setTranslate([this.size[0]/2, 0, 10], transition);
 };
 
 module.exports = Modifier;

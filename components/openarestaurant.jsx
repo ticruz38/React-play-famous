@@ -163,7 +163,7 @@ Open.secondStep = React.createClass({
   },
 
   add: function () {
-    var item = {name: 'name', picture: '', id: Math.random().toString(36).substring(7)};
+    var item = {name: 'name', picture: '/public/icons/picture.png', id: Math.random().toString(36).substring(7)};
     this.getStore(ProStore).add(item);
   },
 
@@ -171,7 +171,7 @@ Open.secondStep = React.createClass({
     return(
       <div>
         <div className='plus-icon' onClick={this.add}/>
-        <CardList items={this.state.items}/>
+        <RouteHandler items={this.state.items}/>
       </div>
     );
   }
@@ -182,7 +182,7 @@ var ReactTransitionGroup = React.addons.TransitionGroup;
 var CardModifier = require('../famous-modifier/cardlayout');
 CardModifier = new CardModifier();
 
-var CardList = React.createClass({
+Open.cardList = React.createClass({
 
   componentDidMount: function () {
     var childs = React.findDOMNode(this.refs.listcontainer).children;
@@ -197,11 +197,27 @@ var CardList = React.createClass({
   }
 });
 
+var CardList = React.createClass({
+
+  componentDidMount: function () {
+    // var childs = React.findDOMNode(this.refs.listcontainer).children;
+    // BodyView.setChild(childs);
+    // BodyView.setModifier(CardModifier);
+  },
+  render: function () {
+    var createItem = function(item, index) {
+      return <CardItem key={item.id} index = {index} item={item}/>;
+    };
+    return <ReactTransitionGroup component='div' className='list-container' ref='listcontainer'>{this.props.items.map(createItem)}</ReactTransitionGroup>;
+  }
+});
+
 var CardItem = React.createClass({
   mixins: [FluxibleMixin],
 
   getInitialState: function () {
     this.props.item.hidden = true;
+    this.props.item.children = [];
     return this.props.item;
   },
 
@@ -212,14 +228,20 @@ var CardItem = React.createClass({
   switch: function () {
     this.state.hidden = ! this.state.hidden;
     this.setState({hidden: this.state.hidden});
-    if(!this.state.hidden){
-      React.findDOMNode(this.refs.input).focus();
-    }
+    var input = React.findDOMNode(this.refs.input);
+    this.state.hidden ? input.blur() : input.focus();
   },
 
   close: function () {
-    console.log(this.props.index);
     this.getStore(ProStore).remove(this.props.index);
+  },
+
+  focus: function () {
+    var img = React.findDOMNode(this.refs.img);
+    img.style.display = 'none';
+    var item = {name: 'name', child: true, picture: '/public/icons/picture.png', id: Math.random().toString(36).substring(7)};
+    this.setState({children: [item]});
+    CardModifier.focus(this.props.index);
   },
 
   componentWillLeave: function (cb) {
@@ -228,7 +250,7 @@ var CardItem = React.createClass({
   },
 
   componentDidMount: function () {
-    BodyView.setChild(this.getDOMNode());
+    if(!this.props.item.child) BodyView.setChild(this.getDOMNode());
   },
 
   render: function () {
@@ -237,7 +259,8 @@ var CardItem = React.createClass({
       <span className = 'close-icon' onClick={this.close}/>
       <span className = {this.state.hidden ? '' : 'hidden'} onClick={this.switch}>{this.state.name}</span>
       <input className = {this.state.hidden ? 'unvisible' : ''} ref='input' onChange={this.onChange} value={this.state.name} onKeyDown={function(e) {if (e.keyCode === 13) this.switch();}.bind(this)}/>
-      <img src={this.state.picture}></img>
+      <img ref='img' src={this.state.picture} onClick={this.focus}></img>
+      <CardList items={this.state.children}/>
       </div>
     );
   }

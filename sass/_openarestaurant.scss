@@ -30,33 +30,27 @@ div.openarestaurant {
   }
   div.list-container {
     display: block;
-    margin: 1em;
-    // display: flex;
-    /* height: 15%; */
-    font-size: 50%;
     text-align: center;
-    // justify-content: space-around;
-    flex-flow: row wrap;
-    /* border: 1px solid black;*/
+    margin: 1em;
+    font-size: 3vmin;
     div.card-item {
-      // border: 1px solid black;
       @extend .famous-surface;
       margin-bottom: 1em;
       width: 30%;
       height: 8em;
-      // overflow: hidden;
-      /* flex-grow: 1;*/
+      background-color: rgba(255, 255, 255, 0.8);
+      overflow: hidden;
       input {
         font-size: 1em;
         width: 60%;
         border: none;
       }
       span.close-icon {
-        background-image: url("/public/icons/close.svg");
+        background-image: url("/public/icons/close.png");
         width: 1em;
         height: 1em;
         cursor: pointer;
-        display: table-cell;
+        display: table-cell; //keep it!!
         position: absolute;
       }
       .unvisible {
@@ -66,7 +60,7 @@ div.openarestaurant {
         z-index: -1;
       }
       img {
-        width: 100%;
+        width: 8em;
         height: 7em;
         border: 1px solid black;
       }
