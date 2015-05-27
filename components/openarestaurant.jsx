@@ -199,8 +199,18 @@ Open.cardList = React.createClass({
 
 var CardList = React.createClass({
 
+  statics: {
+    // mount: function () {
+    //   var childs = React.findDOMNode('.list-container').children;
+    //   console.log(childs);
+    //   CardModifier.child(childs);
+    // }
+  },
+
   componentDidMount: function () {
     // var childs = React.findDOMNode(this.refs.listcontainer).children;
+    // console.log(childs);
+    // CardModifier.child(childs);
     // BodyView.setChild(childs);
     // BodyView.setModifier(CardModifier);
   },
@@ -216,6 +226,7 @@ var CardItem = React.createClass({
   mixins: [FluxibleMixin],
 
   getInitialState: function () {
+    this.child = undefined;
     this.props.item.hidden = true;
     this.props.item.children = [];
     return this.props.item;
@@ -242,6 +253,10 @@ var CardItem = React.createClass({
     var item = {name: 'name', child: true, picture: '/public/icons/picture.png', id: Math.random().toString(36).substring(7)};
     this.setState({children: [item]});
     CardModifier.focus(this.props.index);
+    this.child = function () {
+      var childs = React.findDOMNode(this.refs.CardList).children;
+      CardModifier.child(childs);
+    }.bind(this);
   },
 
   componentWillLeave: function (cb) {
@@ -253,6 +268,10 @@ var CardItem = React.createClass({
     if(!this.props.item.child) BodyView.setChild(this.getDOMNode());
   },
 
+  componentDidUpdate: function () {
+    if(this.child) this.child()
+  },
+
   render: function () {
     return(
       <div className = 'card-item'>
@@ -260,7 +279,7 @@ var CardItem = React.createClass({
       <span className = {this.state.hidden ? '' : 'hidden'} onClick={this.switch}>{this.state.name}</span>
       <input className = {this.state.hidden ? 'unvisible' : ''} ref='input' onChange={this.onChange} value={this.state.name} onKeyDown={function(e) {if (e.keyCode === 13) this.switch();}.bind(this)}/>
       <img ref='img' src={this.state.picture} onClick={this.focus}></img>
-      <CardList items={this.state.children}/>
+      <CardList ref='CardList' items={this.state.children}/>
       </div>
     );
   }

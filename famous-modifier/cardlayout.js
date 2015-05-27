@@ -1,6 +1,7 @@
 var Easing = require('famous/transitions/Easing');
 
 function Modifier() {
+  this.focusElement = undefined;
   this.elements = [];
   this.activeState = _initialState;
   this.state = 0;
@@ -16,7 +17,6 @@ function _initialState(trans) {
   var x = this.size[0] / 8;
   var y = 0;
   var height = this.elements[0]._element.clientHeight;
-  console.log(height);
   this.elements.forEach(function(element, i) {
     if (!element.transitionable.initialize) {
       _initialize.call(this, element, x);
@@ -43,8 +43,7 @@ function _initialize(element, x) {
 Modifier.prototype.setState = function(context, elements) {
   if (!context) return;
   this.size = context.size;
-  var trans = (this.elements.length !== elements.length) ? null : transition;
-  console.log(trans, this.elements.length !== elements.length);
+  var trans = (this.elements.length != elements.length) ? transition : null;
   this.elements = elements;
   this.activeState(trans);
 };
@@ -60,10 +59,17 @@ Modifier.prototype.remove = function(id, cb, view) {
 };
 
 Modifier.prototype.focus = function (id) {
-  var element = this.elements[id];
-  var height = element._element.clientHeight;
-  element.transitionable.size.set([this.size[0] * 0.75 , 2 * height], transition);
-  element.transitionable.transform.setTranslate([this.size[0]/2, 0, 10], transition);
+  this.focusElement = this.elements[id];
+  var height = this.focusElement._element.clientHeight;
+  this.focusElement.transitionable.size.set([this.size[0] * 0.75 , 2 * height], transition);
+  this.focusElement.transitionable.transform.setTranslate([this.size[0]/2, 0, 10], transition);
+};
+
+Modifier.prototype.child = function (childs) {
+  console.log(childs.length, this.focusElement);
+  if(!this.focusElement) return;
+  this.focusElement.testChild(childs);
+  this.focusElement.setModifier(Modifier);
 };
 
 module.exports = Modifier;

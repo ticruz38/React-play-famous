@@ -570,3 +570,18 @@
 2015-05-23T17:41:17.412170000 1.418095s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2015-05-23T17:41:17.412172000 1.418097s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
 2015-05-23T17:41:18.035902000 2.041878s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-05-27T20:09:45.289364000 1.844935s notice: Running rethinkdb 2.0.2 (CLANG 6.0 (clang-600.0.57))...
+2015-05-27T20:09:45.302445000 1.858010s notice: Running on Darwin 13.4.0 x86_64
+2015-05-27T20:09:45.303131000 1.858694s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-05-27T20:09:46.664794000 3.220358s info: Automatically using cache size of 215 MB
+2015-05-27T20:09:46.665632000 3.221195s notice: Listening for intracluster connections on port 29015
+2015-05-27T20:09:46.668044000 3.223607s notice: Listening for client driver connections on port 28015
+2015-05-27T20:09:46.668188000 3.223751s notice: Listening for administrative HTTP connections on port 8080
+2015-05-27T20:09:46.668197000 3.223760s notice: Listening on addresses: 127.0.0.1, ::1
+2015-05-27T20:09:46.668204000 3.223767s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-05-27T20:09:46.668211000 3.223773s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
+2015-05-27T21:17:05.190765000 4041.746329s notice: Server got SIGINT from pid 568, uid 501; shutting down...
+2015-05-27T21:17:05.344741000 4041.900305s notice: Shutting down client connections...
+2015-05-27T21:17:05.344878000 4041.900441s notice: All client connections closed.
+2015-05-27T21:17:05.344887000 4041.900450s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-05-27T21:17:05.525602000 4042.081165s notice: Storage engine shut down.

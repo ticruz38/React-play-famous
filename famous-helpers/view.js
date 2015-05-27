@@ -238,6 +238,34 @@ View.prototype.setChild = function setChild(object) {
   }
 };
 
+View.prototype.testChild = function testChild(object) {
+  console.log('testChild', object.length);
+  if (object.length) {
+    console.log(object);
+    this._childElements = []; //remove old childs
+    for (var i = 0; i < object.length; i++) {
+      var child = object[i];
+      if (!(child instanceof View)) {
+        child = new View({
+          element: child
+        });
+        this._childElements.push(child);
+      } else {
+        this._childElements.push(child);
+      }
+    }
+  } else {
+    if (!(object instanceof View)) {
+      object = new View({
+        element: object
+      });
+      this._childElements.push(object);
+    } else {
+      this._childElements.push(object);
+    }
+  }
+};
+
 View.prototype.setModifier = function(Modifier) {
   Modifier instanceof Function ? this.modifier = new Modifier() : this.modifier = Modifier;
   this.setState = function(trans) {
