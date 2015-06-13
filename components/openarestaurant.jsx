@@ -176,7 +176,10 @@ Open.secondStep = React.createClass({
       callback();
     },
     willTransitionFrom: function (transition, component) {
-      console.log('transitionfrom 2nd step', transition, component);
+      // if (transition.path === '/open/3rd-step') {
+      //   component.getS
+      // }
+      console.log('transitionfrom 2nd step', transition, component.getStore(ProStore));
     }
   },
 
@@ -454,6 +457,15 @@ var ChildCardItem = React.createClass({
 });
 
 Open.thirdStep = React.createClass({
+  statics: {
+    willTransitionTo: function (transition, params, query, callback) {
+      callback();
+    },
+    willTransitionFrom: function (transition, component) {
+
+    }
+  },
+
   render: function () {
     return(
       <div></div>
