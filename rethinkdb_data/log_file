@@ -1,587 +1,172 @@
-2015-04-07T14:36:49.777030000 0.746925s notice: Recursively removing directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data/tmp
-2015-04-07T14:36:49.778272000 0.748169s notice: Initializing directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-07T14:36:49.778358000 0.748251s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/belenduchene/Sites/React-play-famous/rethinkdb_data' did not already exist or is empty.)
-2015-04-07T14:36:49.778382000 0.748276s notice: Running rethinkdb 1.16.3 (CLANG 4.2 (clang-425.0.28))...
-2015-04-07T14:36:49.811106000 0.781001s notice: Running on Darwin 14.1.0 x86_64
-2015-04-07T14:36:49.811156000 0.781049s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-07T14:36:51.726118000 2.696103s info: Automatically using cache size of 100 MB
-2015-04-07T14:36:51.726124000 2.696109s warn: Cache size does not leave much memory for server and query overhead (available memory: 828 MB).
-2015-04-07T14:36:51.726127000 2.696112s warn: Cache size is very low and may impact performance.
-2015-04-07T14:36:51.726586000 2.696571s notice: Listening for intracluster connections on port 29015
-2015-04-07T14:36:51.727125000 2.697110s notice: Listening for client driver connections on port 28015
-2015-04-07T14:36:51.727234000 2.697219s notice: Listening for administrative HTTP connections on port 8080
-2015-04-07T14:36:51.727238000 2.697222s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-07T14:36:51.727240000 2.697225s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-07T14:36:51.727242000 2.697227s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-07T14:38:16.333777000 87.307767s notice: Server got SIGINT from pid 223, uid 501; shutting down...
-2015-04-07T14:38:16.333840000 87.307830s notice: Shutting down client connections...
-2015-04-07T14:38:16.333937000 87.307927s notice: All client connections closed.
-2015-04-07T14:38:16.333943000 87.307932s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-07T14:38:16.334129000 87.308119s notice: Storage engine shut down.
-2015-04-08T15:02:26.415434000 0.540824s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-08T15:02:26.444644000 0.570022s notice: Running on Darwin 14.1.0 x86_64
-2015-04-08T15:02:26.444696000 0.570073s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-08T15:02:27.307576000 1.433044s info: Automatically using cache size of 2408 MB
-2015-04-08T15:02:27.308096000 1.433564s notice: Listening for intracluster connections on port 29015
-2015-04-08T15:02:27.308817000 1.434285s notice: Listening for client driver connections on port 28015
-2015-04-08T15:02:27.308919000 1.434387s notice: Listening for administrative HTTP connections on port 8080
-2015-04-08T15:02:27.308923000 1.434391s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-08T15:02:27.308926000 1.434394s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-08T15:02:27.308928000 1.434396s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-09T13:46:50.572526000 0.060164s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-09T13:46:50.583140000 0.070785s notice: Running on Darwin 14.1.0 x86_64
-2015-04-09T13:46:50.583187000 0.070821s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-09T13:46:51.163362000 0.650996s info: Automatically using cache size of 2814 MB
-2015-04-09T13:46:51.163908000 0.651542s notice: Listening for intracluster connections on port 29015
-2015-04-09T13:46:51.164590000 0.652224s notice: Listening for client driver connections on port 28015
-2015-04-09T13:46:51.164682000 0.652316s notice: Listening for administrative HTTP connections on port 8080
-2015-04-09T13:46:51.164713000 0.652347s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-09T13:46:51.164715000 0.652349s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-09T13:46:51.164717000 0.652351s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-09T20:44:33.143929000 0.637017s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-09T20:44:33.153129000 0.646193s notice: Running on Darwin 14.1.0 x86_64
-2015-04-09T20:44:33.153171000 0.646235s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-09T20:44:33.812468000 1.305618s info: Automatically using cache size of 2416 MB
-2015-04-09T20:44:33.812969000 1.306118s notice: Listening for intracluster connections on port 29015
-2015-04-09T20:44:33.813664000 1.306813s notice: Listening for client driver connections on port 28015
-2015-04-09T20:44:33.813731000 1.306881s notice: Listening for administrative HTTP connections on port 8080
-2015-04-09T20:44:33.813737000 1.306887s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-09T20:44:33.813740000 1.306889s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-09T20:44:33.813742000 1.306892s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-10T14:36:56.823272000 0.648909s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-10T14:36:56.837175000 0.662808s notice: Running on Darwin 14.1.0 x86_64
-2015-04-10T14:36:56.837206000 0.662838s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-10T14:36:57.520785000 1.346418s info: Automatically using cache size of 2400 MB
-2015-04-10T14:36:57.521334000 1.346967s notice: Listening for intracluster connections on port 29015
-2015-04-10T14:36:57.521940000 1.347573s notice: Listening for client driver connections on port 28015
-2015-04-10T14:36:57.521996000 1.347629s notice: Listening for administrative HTTP connections on port 8080
-2015-04-10T14:36:57.522002000 1.347635s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-10T14:36:57.522004000 1.347637s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-10T14:36:57.522006000 1.347639s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-10T18:03:37.239627000 12401.637464s notice: Server got SIGINT from pid 195, uid 501; shutting down...
-2015-04-10T18:03:37.239698000 12401.637534s notice: Shutting down client connections...
-2015-04-10T18:03:37.239802000 12401.637639s notice: All client connections closed.
-2015-04-10T18:03:37.239805000 12401.637642s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-10T18:03:37.309952000 12401.707880s notice: Storage engine shut down.
-2015-04-10T18:54:29.131759000 0.658252s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-10T18:54:29.225552000 0.752042s notice: Running on Darwin 14.1.0 x86_64
-2015-04-10T18:54:29.225611000 0.752100s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-10T18:54:29.899389000 1.425960s info: Automatically using cache size of 1152 MB
-2015-04-10T18:54:29.899935000 1.426506s notice: Listening for intracluster connections on port 29015
-2015-04-10T18:54:29.900650000 1.427221s notice: Listening for client driver connections on port 28015
-2015-04-10T18:54:29.900747000 1.427318s notice: Listening for administrative HTTP connections on port 8080
-2015-04-10T18:54:29.900748000 1.427319s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-10T18:54:29.900750000 1.427321s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-10T18:54:29.900752000 1.427323s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-10T20:57:20.093171000 7371.940310s notice: Server got SIGINT from pid 195, uid 501; shutting down...
-2015-04-10T20:57:20.093254000 7371.940393s notice: Shutting down client connections...
-2015-04-10T20:57:20.093382000 7371.940521s notice: All client connections closed.
-2015-04-10T20:57:20.093384000 7371.940523s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-10T20:57:20.158665000 7372.005805s notice: Storage engine shut down.
-2015-04-12T14:58:56.183779000 0.643001s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-12T14:58:56.200437000 0.659667s notice: Running on Darwin 14.1.0 x86_64
-2015-04-12T14:58:56.200505000 0.659723s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-12T14:58:56.756938000 1.216156s info: Automatically using cache size of 2399 MB
-2015-04-12T14:58:56.757479000 1.216697s notice: Listening for intracluster connections on port 29015
-2015-04-12T14:58:56.758231000 1.217449s notice: Listening for client driver connections on port 28015
-2015-04-12T14:58:56.758307000 1.217525s notice: Listening for administrative HTTP connections on port 8080
-2015-04-12T14:58:56.758309000 1.217527s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-12T14:58:56.758321000 1.217539s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-12T14:58:56.758323000 1.217541s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-12T17:23:15.293384000 0.188064s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-12T17:23:15.296188000 0.190864s notice: Running on Darwin 14.1.0 x86_64
-2015-04-12T17:23:15.296211000 0.190887s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-12T17:23:15.946405000 0.841082s info: Automatically using cache size of 1133 MB
-2015-04-12T17:23:15.946800000 0.841477s notice: Listening for intracluster connections on port 29015
-2015-04-12T17:23:15.947358000 0.842034s notice: Listening for client driver connections on port 28015
-2015-04-12T17:23:15.947423000 0.842099s notice: Listening for administrative HTTP connections on port 8080
-2015-04-12T17:23:15.947427000 0.842103s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-12T17:23:15.947429000 0.842106s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-12T17:23:15.947432000 0.842108s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-12T18:10:22.166899000 2827.308177s notice: Server got SIGINT from pid 216, uid 501; shutting down...
-2015-04-12T18:10:22.166983000 2827.308260s notice: Shutting down client connections...
-2015-04-12T18:10:22.167154000 2827.308432s notice: All client connections closed.
-2015-04-12T18:10:22.167161000 2827.308438s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-12T18:10:22.169745000 2827.311062s notice: Storage engine shut down.
-2015-04-12T19:16:06.918269000 0.594631s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-12T19:16:06.950765000 0.627126s notice: Running on Darwin 14.1.0 x86_64
-2015-04-12T19:16:06.950831000 0.627190s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-12T19:16:07.551669000 1.228027s info: Automatically using cache size of 154 MB
-2015-04-12T19:16:07.552088000 1.228447s notice: Listening for intracluster connections on port 29015
-2015-04-12T19:16:07.552729000 1.229088s notice: Listening for client driver connections on port 28015
-2015-04-12T19:16:07.552801000 1.229159s notice: Listening for administrative HTTP connections on port 8080
-2015-04-12T19:16:07.552804000 1.229163s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-12T19:16:07.552807000 1.229166s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-12T19:16:07.552811000 1.229169s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-12T23:14:22.874942000 14297.186419s notice: Server got SIGINT from pid 216, uid 501; shutting down...
-2015-04-12T23:14:22.875065000 14297.186541s notice: Shutting down client connections...
-2015-04-12T23:14:22.875208000 14297.186685s notice: All client connections closed.
-2015-04-12T23:14:22.875211000 14297.186687s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-12T23:14:22.939944000 14297.251421s notice: Storage engine shut down.
-2015-04-13T14:28:20.950063000 0.653154s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-13T14:28:20.985160000 0.688249s notice: Running on Darwin 14.1.0 x86_64
-2015-04-13T14:28:20.985223000 0.688310s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-13T14:28:21.492592000 1.195777s info: Automatically using cache size of 2778 MB
-2015-04-13T14:28:21.493110000 1.196295s notice: Listening for intracluster connections on port 29015
-2015-04-13T14:28:21.493759000 1.196944s notice: Listening for client driver connections on port 28015
-2015-04-13T14:28:21.493821000 1.197006s notice: Listening for administrative HTTP connections on port 8080
-2015-04-13T14:28:21.493826000 1.197010s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-13T14:28:21.493829000 1.197013s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-13T14:28:21.493831000 1.197016s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-13T17:48:18.591990000 11998.844350s notice: Server got SIGINT from pid 196, uid 501; shutting down...
-2015-04-13T17:48:18.592114000 11998.844473s notice: Shutting down client connections...
-2015-04-13T17:48:18.592283000 11998.844642s notice: All client connections closed.
-2015-04-13T17:48:18.592286000 11998.844645s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-13T17:48:18.786209000 11999.038569s notice: Storage engine shut down.
-2015-04-13T17:52:23.287188000 0.727504s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-13T17:52:23.338657000 0.778971s notice: Running on Darwin 14.1.0 x86_64
-2015-04-13T17:52:23.338708000 0.779020s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-13T17:52:24.153522000 1.593927s info: Automatically using cache size of 429 MB
-2015-04-13T17:52:24.154064000 1.594469s notice: Listening for intracluster connections on port 29015
-2015-04-13T17:52:24.154752000 1.595157s notice: Listening for client driver connections on port 28015
-2015-04-13T17:52:24.154814000 1.595219s notice: Listening for administrative HTTP connections on port 8080
-2015-04-13T17:52:24.154818000 1.595223s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-13T17:52:24.154821000 1.595225s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-13T17:52:24.154823000 1.595227s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-13T22:32:23.678262000 16801.879063s notice: Server got SIGINT from pid 196, uid 501; shutting down...
-2015-04-13T22:32:23.678328000 16801.879128s notice: Shutting down client connections...
-2015-04-13T22:32:23.678502000 16801.879302s notice: All client connections closed.
-2015-04-13T22:32:23.678504000 16801.879305s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-13T22:32:23.681996000 16801.882797s notice: Storage engine shut down.
-2015-04-14T14:59:07.581038000 0.654768s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-14T14:59:07.587722000 0.661450s notice: Running on Darwin 14.1.0 x86_64
-2015-04-14T14:59:07.587771000 0.661498s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-14T14:59:08.782894000 1.856711s info: Automatically using cache size of 2564 MB
-2015-04-14T14:59:08.783586000 1.857403s notice: Listening for intracluster connections on port 29015
-2015-04-14T14:59:08.784382000 1.858199s notice: Listening for client driver connections on port 28015
-2015-04-14T14:59:08.784476000 1.858293s notice: Listening for administrative HTTP connections on port 8080
-2015-04-14T14:59:08.784481000 1.858298s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-14T14:59:08.784485000 1.858303s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-14T14:59:08.784490000 1.858306s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-14T22:08:51.149683000 25785.349301s notice: Server got SIGINT from pid 204, uid 501; shutting down...
-2015-04-14T22:08:51.149754000 25785.349372s notice: Shutting down client connections...
-2015-04-14T22:08:51.149854000 25785.349472s notice: All client connections closed.
-2015-04-14T22:08:51.149857000 25785.349475s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-14T22:08:51.219970000 25785.419588s notice: Storage engine shut down.
-2015-04-15T14:47:51.686043000 0.648119s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-15T14:47:51.689165000 0.651238s notice: Running on Darwin 14.1.0 x86_64
-2015-04-15T14:47:51.689195000 0.651268s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-15T14:47:52.579142000 1.541305s info: Automatically using cache size of 2343 MB
-2015-04-15T14:47:52.579578000 1.541740s notice: Listening for intracluster connections on port 29015
-2015-04-15T14:47:52.580540000 1.542702s notice: Listening for client driver connections on port 28015
-2015-04-15T14:47:52.580606000 1.542768s notice: Listening for administrative HTTP connections on port 8080
-2015-04-15T14:47:52.580609000 1.542771s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-15T14:47:52.580611000 1.542773s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-15T14:47:52.580616000 1.542778s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-16T17:36:46.880557000 0.719631s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-16T17:36:46.895638000 0.734709s notice: Running on Darwin 14.1.0 x86_64
-2015-04-16T17:36:46.895676000 0.734747s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-16T17:36:47.363102000 1.202173s info: Automatically using cache size of 1475 MB
-2015-04-16T17:36:47.363478000 1.202548s notice: Listening for intracluster connections on port 29015
-2015-04-16T17:36:47.364103000 1.203174s notice: Listening for client driver connections on port 28015
-2015-04-16T17:36:47.364178000 1.203250s notice: Listening for administrative HTTP connections on port 8080
-2015-04-16T17:36:47.364186000 1.203257s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-16T17:36:47.364190000 1.203261s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-16T17:36:47.364195000 1.203266s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-16T20:57:03.688746000 12018.074405s notice: Server got SIGINT from pid 209, uid 501; shutting down...
-2015-04-16T20:57:03.688847000 12018.074505s notice: Shutting down client connections...
-2015-04-16T20:57:03.688982000 12018.074641s notice: All client connections closed.
-2015-04-16T20:57:03.688994000 12018.074653s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-16T20:57:03.751750000 12018.137409s notice: Storage engine shut down.
-2015-04-17T15:22:45.056331000 0.099684s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-17T15:22:45.102954000 0.146386s notice: Running on Darwin 14.1.0 x86_64
-2015-04-17T15:22:45.102988000 0.146418s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-17T15:22:45.599993000 0.643424s info: Automatically using cache size of 2382 MB
-2015-04-17T15:22:45.600554000 0.643985s notice: Listening for intracluster connections on port 29015
-2015-04-17T15:22:45.601168000 0.644599s notice: Listening for client driver connections on port 28015
-2015-04-17T15:22:45.601264000 0.644694s notice: Listening for administrative HTTP connections on port 8080
-2015-04-17T15:22:45.601265000 0.644696s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-17T15:22:45.601269000 0.644699s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-17T15:22:45.601271000 0.644702s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-17T16:02:40.647808000 2395.874140s notice: Server got SIGINT from pid 204, uid 501; shutting down...
-2015-04-17T16:02:40.647936000 2395.874268s notice: Shutting down client connections...
-2015-04-17T16:02:40.648120000 2395.874451s notice: All client connections closed.
-2015-04-17T16:02:40.648126000 2395.874457s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-17T16:02:40.651605000 2395.877937s notice: Storage engine shut down.
-2015-04-17T20:53:35.327281000 0.647992s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-17T20:53:35.348342000 0.669049s notice: Running on Darwin 14.1.0 x86_64
-2015-04-17T20:53:35.348375000 0.669081s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-17T20:53:36.671832000 1.992538s info: Automatically using cache size of 513 MB
-2015-04-17T20:53:36.672376000 1.993082s notice: Listening for intracluster connections on port 29015
-2015-04-17T20:53:36.673994000 1.994700s notice: Listening for client driver connections on port 28015
-2015-04-17T20:53:36.674063000 1.994769s notice: Listening for administrative HTTP connections on port 8080
-2015-04-17T20:53:36.674067000 1.994773s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-17T20:53:36.674070000 1.994775s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-17T20:53:36.674072000 1.994777s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-17T23:26:44.438786000 9190.155614s notice: Server got SIGINT from pid 204, uid 501; shutting down...
-2015-04-17T23:26:44.438896000 9190.155724s notice: Shutting down client connections...
-2015-04-17T23:26:44.439087000 9190.155915s notice: All client connections closed.
-2015-04-17T23:26:44.439090000 9190.155918s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-17T23:26:44.504103000 9190.220932s notice: Storage engine shut down.
-2015-04-18T19:22:59.178011000 0.060040s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-18T19:22:59.204427000 0.086455s notice: Running on Darwin 14.1.0 x86_64
-2015-04-18T19:22:59.204456000 0.086481s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-18T19:22:59.816382000 0.698485s info: Automatically using cache size of 2294 MB
-2015-04-18T19:22:59.816802000 0.698905s notice: Listening for intracluster connections on port 29015
-2015-04-18T19:22:59.817381000 0.699484s notice: Listening for client driver connections on port 28015
-2015-04-18T19:22:59.817448000 0.699551s notice: Listening for administrative HTTP connections on port 8080
-2015-04-18T19:22:59.817453000 0.699556s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-18T19:22:59.817457000 0.699560s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-18T19:22:59.817465000 0.699567s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-19T09:23:23.071679000 0.654506s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-19T09:23:23.079024000 0.661848s notice: Running on Darwin 14.1.0 x86_64
-2015-04-19T09:23:23.079056000 0.661879s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-19T09:23:23.585508000 1.168332s info: Automatically using cache size of 1997 MB
-2015-04-19T09:23:23.586003000 1.168826s notice: Listening for intracluster connections on port 29015
-2015-04-19T09:23:23.586667000 1.169490s notice: Listening for client driver connections on port 28015
-2015-04-19T09:23:23.586726000 1.169549s notice: Listening for administrative HTTP connections on port 8080
-2015-04-19T09:23:23.586734000 1.169557s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-19T09:23:23.586736000 1.169559s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-19T09:23:23.586738000 1.169561s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-19T23:14:05.120763000 49844.831454s notice: Server got SIGINT from pid 208, uid 501; shutting down...
-2015-04-19T23:14:05.120855000 49844.831546s notice: Shutting down client connections...
-2015-04-19T23:14:05.121006000 49844.831697s notice: All client connections closed.
-2015-04-19T23:14:05.121017000 49844.831708s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-19T23:14:05.166028000 49844.876719s notice: Storage engine shut down.
-2015-04-21T16:12:19.055487000 0.092960s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-21T16:12:19.156303000 0.193774s notice: Running on Darwin 14.1.0 x86_64
-2015-04-21T16:12:19.156352000 0.193821s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-21T16:12:19.689176000 0.726646s info: Automatically using cache size of 1431 MB
-2015-04-21T16:12:19.689717000 0.727186s notice: Listening for intracluster connections on port 29015
-2015-04-21T16:12:19.690472000 0.727942s notice: Listening for client driver connections on port 28015
-2015-04-21T16:12:19.690571000 0.728041s notice: Listening for administrative HTTP connections on port 8080
-2015-04-21T16:12:19.690576000 0.728045s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-21T16:12:19.690578000 0.728047s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-21T16:12:19.690582000 0.728051s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-21T16:12:24.109343000 5.147003s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-04-21T21:07:58.776522000 17740.616262s notice: Server got SIGINT from pid 196, uid 501; shutting down...
-2015-04-21T21:07:58.776631000 17740.616371s notice: Shutting down client connections...
-2015-04-21T21:07:58.776775000 17740.616515s notice: All client connections closed.
-2015-04-21T21:07:58.776777000 17740.616518s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-21T21:07:58.831891000 17740.671632s notice: Storage engine shut down.
-2015-04-21T21:22:51.019249000 0.603828s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-21T21:22:51.086849000 0.671426s notice: Running on Darwin 14.1.0 x86_64
-2015-04-21T21:22:51.086883000 0.671458s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-21T21:22:51.656837000 1.241413s info: Automatically using cache size of 953 MB
-2015-04-21T21:22:51.657333000 1.241908s notice: Listening for intracluster connections on port 29015
-2015-04-21T21:22:51.658012000 1.242588s notice: Listening for client driver connections on port 28015
-2015-04-21T21:22:51.658076000 1.242652s notice: Listening for administrative HTTP connections on port 8080
-2015-04-21T21:22:51.658081000 1.242656s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-21T21:22:51.658083000 1.242658s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-21T21:22:51.658087000 1.242663s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-21T21:22:52.114262000 1.698930s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-04-21T23:12:39.230917000 6589.116647s notice: Server got SIGINT from pid 196, uid 501; shutting down...
-2015-04-21T23:12:39.230987000 6589.116717s notice: Shutting down client connections...
-2015-04-21T23:12:39.231091000 6589.116821s notice: All client connections closed.
-2015-04-21T23:12:39.231094000 6589.116824s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-21T23:12:39.234522000 6589.120253s notice: Storage engine shut down.
-2015-04-22T15:01:05.145822000 0.371864s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-22T15:01:05.223097000 0.449136s notice: Running on Darwin 14.1.0 x86_64
-2015-04-22T15:01:05.223149000 0.449188s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-22T15:01:06.505158000 1.731277s info: Automatically using cache size of 1875 MB
-2015-04-22T15:01:06.505730000 1.731849s notice: Listening for intracluster connections on port 29015
-2015-04-22T15:01:06.506421000 1.732540s notice: Listening for client driver connections on port 28015
-2015-04-22T15:01:06.506541000 1.732659s notice: Listening for administrative HTTP connections on port 8080
-2015-04-22T15:01:06.506546000 1.732664s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-22T15:01:06.506546001 1.732664s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-22T15:01:06.506548000 1.732667s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-22T15:01:07.632866000 2.859065s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-04-22T17:16:36.402290000 8132.256976s notice: Server got SIGINT from pid 203, uid 501; shutting down...
-2015-04-22T17:16:36.402369000 8132.257054s notice: Shutting down client connections...
-2015-04-22T17:16:36.402467000 8132.257152s notice: All client connections closed.
-2015-04-22T17:16:36.402470000 8132.257155s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-22T17:16:36.452289000 8132.306975s notice: Storage engine shut down.
-2015-04-22T18:15:06.928898000 0.685479s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-22T18:15:07.186758000 0.943338s notice: Running on Darwin 14.3.0 x86_64
-2015-04-22T18:15:07.186814000 0.943393s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-22T18:15:10.133496000 3.890321s info: Automatically using cache size of 1746 MB
-2015-04-22T18:15:10.134028000 3.890853s notice: Listening for intracluster connections on port 29015
-2015-04-22T18:15:10.134609000 3.891433s notice: Listening for client driver connections on port 28015
-2015-04-22T18:15:10.134715000 3.891540s notice: Listening for administrative HTTP connections on port 8080
-2015-04-22T18:15:10.134720000 3.891545s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-22T18:15:10.134722000 3.891547s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-22T18:15:10.134725000 3.891550s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-22T18:15:10.759783000 4.516608s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-04-22T22:51:25.835355000 16580.290526s notice: Server got SIGINT from pid 381, uid 501; shutting down...
-2015-04-22T22:51:25.835479000 16580.290650s notice: Shutting down client connections...
-2015-04-22T22:51:25.835605000 16580.290776s notice: All client connections closed.
-2015-04-22T22:51:25.835608000 16580.290779s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-22T22:51:26.026799000 16580.481970s notice: Storage engine shut down.
-2015-04-24T16:55:31.204355000 0.918758s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-24T16:55:31.279480000 0.993879s notice: Running on Darwin 14.3.0 x86_64
-2015-04-24T16:55:31.279520000 0.993917s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-24T16:55:32.907412000 2.621899s info: Automatically using cache size of 1097 MB
-2015-04-24T16:55:32.907942000 2.622429s notice: Listening for intracluster connections on port 29015
-2015-04-24T16:55:32.908795000 2.623282s notice: Listening for client driver connections on port 28015
-2015-04-24T16:55:32.908902000 2.623389s notice: Listening for administrative HTTP connections on port 8080
-2015-04-24T16:55:32.908907000 2.623394s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-24T16:55:32.908908000 2.623395s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-24T16:55:32.908911000 2.623397s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-24T16:55:33.498017000 3.212504s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-04-24T22:49:19.552043000 21230.219859s notice: Server got SIGINT from pid 224, uid 501; shutting down...
-2015-04-24T22:49:19.552109000 21230.219924s notice: Shutting down client connections...
-2015-04-24T22:49:19.552269000 21230.220085s notice: All client connections closed.
-2015-04-24T22:49:19.552272000 21230.220087s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-24T22:49:19.672016000 21230.339832s notice: Storage engine shut down.
-2015-04-25T18:53:36.549894000 6.228206s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-25T18:53:36.636399000 6.314709s notice: Running on Darwin 14.3.0 x86_64
-2015-04-25T18:53:36.636440000 6.314749s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-25T18:53:38.313760000 7.992157s info: Automatically using cache size of 1374 MB
-2015-04-25T18:53:38.314367000 7.992764s notice: Listening for intracluster connections on port 29015
-2015-04-25T18:53:38.315056000 7.993453s notice: Listening for client driver connections on port 28015
-2015-04-25T18:53:38.315130000 7.993527s notice: Listening for administrative HTTP connections on port 8080
-2015-04-25T18:53:38.315135000 7.993532s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-25T18:53:38.315137000 7.993534s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-25T18:53:38.315139000 7.993536s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-25T18:53:41.792430000 11.471003s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-04-25T23:43:17.044924000 17387.504632s notice: Server got SIGINT from pid 229, uid 501; shutting down...
-2015-04-25T23:43:17.044997000 17387.504704s notice: Shutting down client connections...
-2015-04-25T23:43:17.045084000 17387.504791s notice: All client connections closed.
-2015-04-25T23:43:17.045086000 17387.504793s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-25T23:43:17.108153000 17387.567861s notice: Storage engine shut down.
-2015-04-26T11:35:22.825537000 0.890444s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-26T11:35:22.838784000 0.903688s notice: Running on Darwin 14.3.0 x86_64
-2015-04-26T11:35:22.838908000 0.903811s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-26T11:35:24.136321000 2.201309s info: Automatically using cache size of 2277 MB
-2015-04-26T11:35:24.136901000 2.201889s notice: Listening for intracluster connections on port 29015
-2015-04-26T11:35:24.137635000 2.202623s notice: Listening for client driver connections on port 28015
-2015-04-26T11:35:24.137773000 2.202761s notice: Listening for administrative HTTP connections on port 8080
-2015-04-26T11:35:24.137774000 2.202762s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-26T11:35:24.137776000 2.202764s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-26T11:35:24.137779000 2.202766s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-26T11:35:24.568886000 2.633958s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-04-26T22:54:26.815965000 40746.671644s notice: Server got SIGINT from pid 230, uid 501; shutting down...
-2015-04-26T22:54:26.816097000 40746.671776s notice: Shutting down client connections...
-2015-04-26T22:54:26.816294000 40746.671973s notice: All client connections closed.
-2015-04-26T22:54:26.816301000 40746.671980s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-04-26T22:54:26.903196000 40746.758875s notice: Storage engine shut down.
-2015-04-27T14:26:42.456222000 0.652872s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-04-27T14:26:42.465755000 0.662403s notice: Running on Darwin 14.3.0 x86_64
-2015-04-27T14:26:42.465791000 0.662438s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-04-27T14:26:45.343914000 3.540815s info: Automatically using cache size of 2365 MB
-2015-04-27T14:26:45.344486000 3.541387s notice: Listening for intracluster connections on port 29015
-2015-04-27T14:26:45.345102000 3.542003s notice: Listening for client driver connections on port 28015
-2015-04-27T14:26:45.345173000 3.542073s notice: Listening for administrative HTTP connections on port 8080
-2015-04-27T14:26:45.345177000 3.542077s notice: Listening on addresses: 127.0.0.1, ::1
-2015-04-27T14:26:45.345180000 3.542080s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-04-27T14:26:45.345182000 3.542082s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-04-27T14:26:45.780103000 3.977003s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-05T15:20:22.365100000 0.101803s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-05T15:20:22.449285000 0.185984s notice: Running on Darwin 14.3.0 x86_64
-2015-05-05T15:20:22.449339000 0.186037s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-05T15:20:23.464310000 1.201101s info: Automatically using cache size of 2125 MB
-2015-05-05T15:20:23.464841000 1.201631s notice: Listening for intracluster connections on port 29015
-2015-05-05T15:20:23.465588000 1.202379s notice: Listening for client driver connections on port 28015
-2015-05-05T15:20:23.465723000 1.202514s notice: Listening for administrative HTTP connections on port 8080
-2015-05-05T15:20:23.465731000 1.202522s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-05T15:20:23.465733000 1.202524s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-05T15:20:23.465736000 1.202526s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-05T15:20:30.313662000 8.051016s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-06T16:25:04.570547000 0.062650s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-06T16:25:04.578192000 0.070303s notice: Running on Darwin 14.3.0 x86_64
-2015-05-06T16:25:04.578240000 0.070339s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-06T16:25:04.941017000 0.433116s info: Automatically using cache size of 2351 MB
-2015-05-06T16:25:04.941572000 0.433672s notice: Listening for intracluster connections on port 29015
-2015-05-06T16:25:04.942321000 0.434421s notice: Listening for client driver connections on port 28015
-2015-05-06T16:25:04.942381000 0.434480s notice: Listening for administrative HTTP connections on port 8080
-2015-05-06T16:25:04.942382000 0.434481s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-06T16:25:04.942384000 0.434483s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-06T16:25:04.942386000 0.434486s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-06T16:25:25.431264000 20.925142s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-06T18:16:44.377623000 6700.074311s notice: Server got SIGINT from pid 233, uid 501; shutting down...
-2015-05-06T18:16:44.377716000 6700.074403s notice: Shutting down client connections...
-2015-05-06T18:16:44.377879000 6700.074566s notice: All client connections closed.
-2015-05-06T18:16:44.377881000 6700.074568s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-06T18:16:44.444030000 6700.140717s notice: Storage engine shut down.
-2015-05-07T15:30:23.074691000 0.654146s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-07T15:30:23.198537000 0.777989s notice: Running on Darwin 14.3.0 x86_64
-2015-05-07T15:30:23.198578000 0.778028s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-07T15:30:23.934712000 1.514254s info: Automatically using cache size of 741 MB
-2015-05-07T15:30:23.935302000 1.514843s notice: Listening for intracluster connections on port 29015
-2015-05-07T15:30:23.935933000 1.515475s notice: Listening for client driver connections on port 28015
-2015-05-07T15:30:23.936018000 1.515560s notice: Listening for administrative HTTP connections on port 8080
-2015-05-07T15:30:23.936024000 1.515565s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-07T15:30:23.936026000 1.515568s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-07T15:30:23.936028000 1.515569s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-07T15:30:24.492277000 2.071819s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-08T10:14:47.349888000 0.068704s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-08T10:14:47.376965000 0.095779s notice: Running on Darwin 14.3.0 x86_64
-2015-05-08T10:14:47.377022000 0.095835s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-08T10:14:48.069038000 0.787851s info: Automatically using cache size of 2576 MB
-2015-05-08T10:14:48.069535000 0.788348s notice: Listening for intracluster connections on port 29015
-2015-05-08T10:14:48.070138000 0.788952s notice: Listening for client driver connections on port 28015
-2015-05-08T10:14:48.070239000 0.789052s notice: Listening for administrative HTTP connections on port 8080
-2015-05-08T10:14:48.070243000 0.789056s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-08T10:14:48.070245000 0.789058s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-08T10:14:48.070247000 0.789060s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-08T10:14:51.193786000 3.912867s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-08T14:17:30.972821000 14564.409437s notice: Server got SIGINT from pid 219, uid 501; shutting down...
-2015-05-08T14:17:30.972896000 14564.409512s notice: Shutting down client connections...
-2015-05-08T14:17:30.973026000 14564.409642s notice: All client connections closed.
-2015-05-08T14:17:30.973029000 14564.409645s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-08T14:17:31.038107000 14564.474723s notice: Storage engine shut down.
-2015-05-08T17:00:48.953410000 0.685555s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-08T17:00:49.127185000 0.859328s notice: Running on Darwin 14.3.0 x86_64
-2015-05-08T17:00:49.127240000 0.859381s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-08T17:00:49.565861000 1.298003s info: Automatically using cache size of 1540 MB
-2015-05-08T17:00:49.568308000 1.300449s notice: Listening for intracluster connections on port 29015
-2015-05-08T17:00:49.569740000 1.301882s notice: Listening for client driver connections on port 28015
-2015-05-08T17:00:49.569883000 1.302024s notice: Listening for administrative HTTP connections on port 8080
-2015-05-08T17:00:49.569888000 1.302029s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-08T17:00:49.569890000 1.302031s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-08T17:00:49.569893000 1.302035s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-08T17:00:50.723351000 2.455581s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-08T20:32:15.462870000 12688.003453s notice: Server got SIGINT from pid 219, uid 501; shutting down...
-2015-05-08T20:32:15.462978000 12688.003562s notice: Shutting down client connections...
-2015-05-08T20:32:15.463249000 12688.003832s notice: All client connections closed.
-2015-05-08T20:32:15.463252000 12688.003835s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-08T20:32:15.520765000 12688.061349s notice: Storage engine shut down.
-2015-05-08T20:57:41.035116000 0.509430s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-08T20:57:41.074229000 0.548541s notice: Running on Darwin 14.3.0 x86_64
-2015-05-08T20:57:41.074264000 0.548574s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-08T20:57:42.013787000 1.488182s info: Automatically using cache size of 1406 MB
-2015-05-08T20:57:42.014333000 1.488728s notice: Listening for intracluster connections on port 29015
-2015-05-08T20:57:42.015113000 1.489508s notice: Listening for client driver connections on port 28015
-2015-05-08T20:57:42.015184000 1.489579s notice: Listening for administrative HTTP connections on port 8080
-2015-05-08T20:57:42.015198000 1.489593s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-08T20:57:42.015199000 1.489594s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-08T20:57:42.015207000 1.489602s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-08T20:57:44.711889000 4.186454s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-08T22:55:07.371592000 7046.797678s notice: Server got SIGINT from pid 219, uid 501; shutting down...
-2015-05-08T22:55:07.371663000 7046.797749s notice: Shutting down client connections...
-2015-05-08T22:55:07.371853000 7046.797939s notice: All client connections closed.
-2015-05-08T22:55:07.371855000 7046.797941s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-08T22:55:07.374945000 7046.801032s notice: Storage engine shut down.
-2015-05-09T15:56:04.751818000 0.675238s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-09T15:56:04.927331000 0.850749s notice: Running on Darwin 14.3.0 x86_64
-2015-05-09T15:56:04.927390000 0.850806s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-09T15:56:05.676264000 1.599770s info: Automatically using cache size of 2362 MB
-2015-05-09T15:56:05.676832000 1.600338s notice: Listening for intracluster connections on port 29015
-2015-05-09T15:56:05.677699000 1.601205s notice: Listening for client driver connections on port 28015
-2015-05-09T15:56:05.677798000 1.601304s notice: Listening for administrative HTTP connections on port 8080
-2015-05-09T15:56:05.677812000 1.601318s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-09T15:56:05.677814000 1.601320s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-09T15:56:05.677816000 1.601322s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-09T15:56:06.764772000 2.688368s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-11T23:06:19.471027000 198624.290233s notice: Server got SIGINT from pid 232, uid 501; shutting down...
-2015-05-11T23:06:19.480632000 198624.299836s notice: Shutting down client connections...
-2015-05-11T23:06:19.480780000 198624.299983s notice: All client connections closed.
-2015-05-11T23:06:19.480782000 198624.299986s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-11T23:06:19.661599000 198624.480803s notice: Storage engine shut down.
-2015-05-12T15:54:30.019158000 0.667445s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-12T15:54:30.046714000 0.694999s notice: Running on Darwin 14.3.0 x86_64
-2015-05-12T15:54:30.046768000 0.695052s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-12T15:54:31.139376000 1.787757s info: Automatically using cache size of 2246 MB
-2015-05-12T15:54:31.139941000 1.788322s notice: Listening for intracluster connections on port 29015
-2015-05-12T15:54:31.140724000 1.789105s notice: Listening for client driver connections on port 28015
-2015-05-12T15:54:31.140803000 1.789184s notice: Listening for administrative HTTP connections on port 8080
-2015-05-12T15:54:31.140806000 1.789187s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-12T15:54:31.140809000 1.789190s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-12T15:54:31.140812000 1.789193s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-12T15:54:32.434730000 3.083304s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-12T22:54:35.327593000 25207.177364s notice: Server got SIGINT from pid 218, uid 501; shutting down...
-2015-05-12T22:54:35.327712000 25207.177482s notice: Shutting down client connections...
-2015-05-12T22:54:35.327824000 25207.177594s notice: All client connections closed.
-2015-05-12T22:54:35.327826000 25207.177596s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-12T22:54:35.494569000 25207.344339s notice: Storage engine shut down.
-2015-05-13T14:59:58.988870000 0.635542s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-13T14:59:59.181821000 0.828493s notice: Running on Darwin 14.3.0 x86_64
-2015-05-13T14:59:59.181860000 0.828529s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-13T15:00:00.294790000 1.941685s info: Automatically using cache size of 533 MB
-2015-05-13T15:00:00.295402000 1.942297s notice: Listening for intracluster connections on port 29015
-2015-05-13T15:00:00.296253000 1.943149s notice: Listening for client driver connections on port 28015
-2015-05-13T15:00:00.296366000 1.943263s notice: Listening for administrative HTTP connections on port 8080
-2015-05-13T15:00:00.296387000 1.943283s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-13T15:00:00.296403000 1.943299s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-13T15:00:00.296406000 1.943302s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-13T15:00:01.357337000 3.004299s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-15T20:30:00.091668000 0.653674s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-15T20:30:00.190626000 0.752640s notice: Running on Darwin 14.3.0 x86_64
-2015-05-15T20:30:00.190687000 0.752690s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-15T20:30:00.767854000 1.329857s info: Automatically using cache size of 2412 MB
-2015-05-15T20:30:00.768412000 1.330415s notice: Listening for intracluster connections on port 29015
-2015-05-15T20:30:00.769059000 1.331062s notice: Listening for client driver connections on port 28015
-2015-05-15T20:30:00.769116000 1.331119s notice: Listening for administrative HTTP connections on port 8080
-2015-05-15T20:30:00.769121000 1.331124s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-15T20:30:00.769123000 1.331126s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-15T20:30:00.769125000 1.331128s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-15T20:30:01.732495000 2.294498s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-15T22:38:31.016186000 7711.887447s notice: Server got SIGINT from pid 220, uid 501; shutting down...
-2015-05-15T22:38:31.016295000 7711.887555s notice: Shutting down client connections...
-2015-05-15T22:38:31.016469000 7711.887729s notice: All client connections closed.
-2015-05-15T22:38:31.016472000 7711.887732s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-15T22:38:31.093060000 7711.964320s notice: Storage engine shut down.
-2015-05-16T18:22:10.335192000 0.551773s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-16T18:22:10.386020000 0.602609s notice: Running on Darwin 14.3.0 x86_64
-2015-05-16T18:22:10.386086000 0.602664s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-16T18:22:10.964270000 1.180847s info: Automatically using cache size of 2471 MB
-2015-05-16T18:22:10.964819000 1.181396s notice: Listening for intracluster connections on port 29015
-2015-05-16T18:22:10.965561000 1.182139s notice: Listening for client driver connections on port 28015
-2015-05-16T18:22:10.965619000 1.182197s notice: Listening for administrative HTTP connections on port 8080
-2015-05-16T18:22:10.965626000 1.182204s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-16T18:22:10.965630000 1.182208s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-16T18:22:10.965634000 1.182212s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-16T18:22:11.646258000 1.862836s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-16T19:16:48.993823000 3279.335745s notice: Server got SIGINT from pid 217, uid 501; shutting down...
-2015-05-16T19:16:48.993921000 3279.335844s notice: Shutting down client connections...
-2015-05-16T19:16:49.027845000 3279.369768s notice: All client connections closed.
-2015-05-16T19:16:49.027848000 3279.369771s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-16T19:16:49.060514000 3279.402437s notice: Storage engine shut down.
-2015-05-17T22:24:53.498520000 0.644726s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-17T22:24:53.633380000 0.779584s notice: Running on Darwin 14.3.0 x86_64
-2015-05-17T22:24:53.633437000 0.779640s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-17T22:24:54.094926000 1.241129s info: Automatically using cache size of 2614 MB
-2015-05-17T22:24:54.095478000 1.241681s notice: Listening for intracluster connections on port 29015
-2015-05-17T22:24:54.096211000 1.242414s notice: Listening for client driver connections on port 28015
-2015-05-17T22:24:54.096296000 1.242499s notice: Listening for administrative HTTP connections on port 8080
-2015-05-17T22:24:54.096302000 1.242504s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-17T22:24:54.096306000 1.242508s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-17T22:24:54.096309000 1.242512s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-17T22:24:55.758025000 2.904304s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-17T23:19:06.607581000 3253.941590s notice: Server got SIGINT from pid 236, uid 501; shutting down...
-2015-05-17T23:19:06.607652000 3253.941661s notice: Shutting down client connections...
-2015-05-17T23:19:06.607752000 3253.941761s notice: All client connections closed.
-2015-05-17T23:19:06.607754000 3253.941763s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-17T23:19:06.670198000 3254.004207s notice: Storage engine shut down.
-2015-05-18T16:24:46.916633000 0.661427s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-18T16:24:46.991283000 0.736075s notice: Running on Darwin 14.3.0 x86_64
-2015-05-18T16:24:46.991352000 0.736142s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-18T16:24:47.542473000 1.287263s info: Automatically using cache size of 2546 MB
-2015-05-18T16:24:47.543053000 1.287843s notice: Listening for intracluster connections on port 29015
-2015-05-18T16:24:47.543805000 1.288596s notice: Listening for client driver connections on port 28015
-2015-05-18T16:24:47.543875000 1.288666s notice: Listening for administrative HTTP connections on port 8080
-2015-05-18T16:24:47.543882000 1.288672s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-18T16:24:47.543882001 1.288672s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-18T16:24:47.543884000 1.288674s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-18T16:24:48.574360000 2.319227s notice: A newer version of the RethinkDB server is available: 2.0.1. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-21T23:13:56.741452000 283763.333552s notice: Server got SIGINT from pid 226, uid 501; shutting down...
-2015-05-21T23:13:56.773570000 283763.365670s notice: Shutting down client connections...
-2015-05-21T23:13:56.773796000 283763.365895s notice: All client connections closed.
-2015-05-21T23:13:56.773800000 283763.365899s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-21T23:13:56.836919000 283763.429018s notice: Storage engine shut down.
-2015-05-23T17:41:16.662695000 0.668575s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
-2015-05-23T17:41:16.738741000 0.744617s notice: Running on Darwin 14.3.0 x86_64
-2015-05-23T17:41:16.738794000 0.744669s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-23T17:41:17.410701000 1.416626s info: Automatically using cache size of 1000 MB
-2015-05-23T17:41:17.411244000 1.417169s notice: Listening for intracluster connections on port 29015
-2015-05-23T17:41:17.412097000 1.418022s notice: Listening for client driver connections on port 28015
-2015-05-23T17:41:17.412162000 1.418087s notice: Listening for administrative HTTP connections on port 8080
-2015-05-23T17:41:17.412168000 1.418093s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-23T17:41:17.412170000 1.418095s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-23T17:41:17.412172000 1.418097s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-23T17:41:18.035902000 2.041878s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
-2015-05-27T20:09:45.289364000 1.844935s notice: Running rethinkdb 2.0.2 (CLANG 6.0 (clang-600.0.57))...
-2015-05-27T20:09:45.302445000 1.858010s notice: Running on Darwin 13.4.0 x86_64
-2015-05-27T20:09:45.303131000 1.858694s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
-2015-05-27T20:09:46.664794000 3.220358s info: Automatically using cache size of 215 MB
-2015-05-27T20:09:46.665632000 3.221195s notice: Listening for intracluster connections on port 29015
-2015-05-27T20:09:46.668044000 3.223607s notice: Listening for client driver connections on port 28015
-2015-05-27T20:09:46.668188000 3.223751s notice: Listening for administrative HTTP connections on port 8080
-2015-05-27T20:09:46.668197000 3.223760s notice: Listening on addresses: 127.0.0.1, ::1
-2015-05-27T20:09:46.668204000 3.223767s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
-2015-05-27T20:09:46.668211000 3.223773s notice: Server ready, "iMac_de_Belen_local_fxl" ade9fae7-0f1a-4902-9926-8627c91b5a44
-2015-05-27T21:17:05.190765000 4041.746329s notice: Server got SIGINT from pid 568, uid 501; shutting down...
-2015-05-27T21:17:05.344741000 4041.900305s notice: Shutting down client connections...
-2015-05-27T21:17:05.344878000 4041.900441s notice: All client connections closed.
-2015-05-27T21:17:05.344887000 4041.900450s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
-2015-05-27T21:17:05.525602000 4042.081165s notice: Storage engine shut down.
+2015-06-01T15:08:57.416298000 0.581860s notice: Recursively removing directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data/tmp
+2015-06-01T15:08:57.417053000 0.582618s notice: Initializing directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-06-01T15:08:57.417120000 0.582681s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/belenduchene/Sites/React-play-famous/rethinkdb_data' did not already exist or is empty.)
+2015-06-01T15:08:57.417136000 0.582697s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-01T15:08:57.420091000 0.585654s notice: Running on Darwin 14.3.0 x86_64
+2015-06-01T15:08:57.420132000 0.585693s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-06-01T15:08:59.594602000 2.760613s info: Automatically using cache size of 1871 MB
+2015-06-01T15:08:59.594982000 2.760992s notice: Listening for intracluster connections on port 29015
+2015-06-01T15:08:59.595482000 2.761492s notice: Listening for client driver connections on port 28015
+2015-06-01T15:08:59.595532000 2.761542s notice: Listening for administrative HTTP connections on port 8080
+2015-06-01T15:08:59.595533000 2.761543s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-01T15:08:59.595535000 2.761546s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-01T15:08:59.595542000 2.761552s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-01T15:09:01.406985000 4.573221s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-01T23:26:47.038345000 29871.314444s notice: Server got SIGINT from pid 216, uid 501; shutting down...
+2015-06-01T23:26:47.038449000 29871.314549s notice: Shutting down client connections...
+2015-06-01T23:26:47.038621000 29871.314721s notice: All client connections closed.
+2015-06-01T23:26:47.038627000 29871.314727s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-01T23:26:47.040972000 29871.317071s notice: Storage engine shut down.
+2015-06-02T09:58:57.308159000 0.661709s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-02T09:58:57.388770000 0.742319s notice: Running on Darwin 14.3.0 x86_64
+2015-06-02T09:58:57.388815000 0.742361s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-06-02T09:58:58.064956000 1.418571s info: Automatically using cache size of 2647 MB
+2015-06-02T09:58:58.065546000 1.419161s notice: Listening for intracluster connections on port 29015
+2015-06-02T09:58:58.066454000 1.420069s notice: Listening for client driver connections on port 28015
+2015-06-02T09:58:58.066550000 1.420164s notice: Listening for administrative HTTP connections on port 8080
+2015-06-02T09:58:58.066551000 1.420166s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-02T09:58:58.066553000 1.420168s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-02T09:58:58.066556000 1.420170s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-02T09:59:01.473028000 4.826845s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-02T14:21:03.428426000 15727.819892s notice: Server got SIGINT from pid 227, uid 501; shutting down...
+2015-06-02T14:21:03.428506000 15727.819971s notice: Shutting down client connections...
+2015-06-02T14:21:03.428652000 15727.820118s notice: All client connections closed.
+2015-06-02T14:21:03.428667000 15727.820133s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-02T14:21:03.430995000 15727.822461s notice: Storage engine shut down.
+2015-06-02T14:29:21.121856000 0.656464s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-02T14:29:21.193196000 0.727803s notice: Running on Darwin 14.3.0 x86_64
+2015-06-02T14:29:21.193238000 0.727843s notice: Loading data from directory /Users/belenduchene/sites/react-play-famous/rethinkdb_data
+2015-06-02T14:29:21.911105000 1.445767s info: Automatically using cache size of 2645 MB
+2015-06-02T14:29:21.911578000 1.446240s notice: Listening for intracluster connections on port 29015
+2015-06-02T14:29:21.912197000 1.446859s notice: Listening for client driver connections on port 28015
+2015-06-02T14:29:21.912286000 1.446948s notice: Listening for administrative HTTP connections on port 8080
+2015-06-02T14:29:21.912294000 1.446956s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-02T14:29:21.912297000 1.446960s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-02T14:29:21.912301000 1.446963s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-02T14:29:23.727316000 3.262091s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-02T15:55:57.146473000 0.068805s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-02T15:55:57.159668000 0.081998s notice: Running on Darwin 14.3.0 x86_64
+2015-06-02T15:55:57.159714000 0.082043s notice: Loading data from directory /Users/belenduchene/sites/react-play-famous/rethinkdb_data
+2015-06-02T15:55:57.836885000 0.759286s info: Automatically using cache size of 2710 MB
+2015-06-02T15:55:57.837439000 0.759840s notice: Listening for intracluster connections on port 29015
+2015-06-02T15:55:57.838245000 0.760646s notice: Listening for client driver connections on port 28015
+2015-06-02T15:55:57.838352000 0.760753s notice: Listening for administrative HTTP connections on port 8080
+2015-06-02T15:55:57.838353000 0.760754s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-02T15:55:57.838365000 0.760766s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-02T15:55:57.838367000 0.760768s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-02T15:56:00.879607000 3.802225s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-03T22:59:22.243327000 111810.385979s notice: Server got SIGINT from pid 221, uid 501; shutting down...
+2015-06-03T22:59:22.243420000 111810.386071s notice: Shutting down client connections...
+2015-06-03T22:59:22.243564000 111810.386215s notice: All client connections closed.
+2015-06-03T22:59:22.243566000 111810.386218s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-03T22:59:22.308086000 111810.450738s notice: Storage engine shut down.
+2015-06-04T16:03:42.962865000 0.629417s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-04T16:03:43.036254000 0.702804s notice: Running on Darwin 14.3.0 x86_64
+2015-06-04T16:03:43.036316000 0.702864s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-06-04T16:03:43.524246000 1.190841s info: Automatically using cache size of 2620 MB
+2015-06-04T16:03:43.524789000 1.191384s notice: Listening for intracluster connections on port 29015
+2015-06-04T16:03:43.525571000 1.192166s notice: Listening for client driver connections on port 28015
+2015-06-04T16:03:43.525702000 1.192297s notice: Listening for administrative HTTP connections on port 8080
+2015-06-04T16:03:43.525709000 1.192303s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-04T16:03:43.525716000 1.192311s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-04T16:03:43.525719000 1.192314s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-04T16:03:44.390293000 2.056888s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-04T23:21:23.257193000 26262.115924s notice: Server got SIGINT from pid 219, uid 501; shutting down...
+2015-06-04T23:21:23.257258000 26262.115989s notice: Shutting down client connections...
+2015-06-04T23:21:23.352248000 26262.210988s notice: All client connections closed.
+2015-06-04T23:21:23.352251000 26262.210991s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-04T23:21:23.382329000 26262.241069s notice: Storage engine shut down.
+2015-06-05T17:18:20.085430000 0.611590s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-05T17:18:20.250883000 0.777041s notice: Running on Darwin 14.3.0 x86_64
+2015-06-05T17:18:20.250918000 0.777075s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-06-05T17:18:20.956458000 1.482665s info: Automatically using cache size of 1032 MB
+2015-06-05T17:18:20.956978000 1.483185s notice: Listening for intracluster connections on port 29015
+2015-06-05T17:18:20.957729000 1.483936s notice: Listening for client driver connections on port 28015
+2015-06-05T17:18:20.957809000 1.484016s notice: Listening for administrative HTTP connections on port 8080
+2015-06-05T17:18:20.957822000 1.484029s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-05T17:18:20.957824000 1.484031s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-05T17:18:20.957826000 1.484033s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-05T17:18:21.646349000 2.172556s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-06T23:43:11.967493000 109497.255417s notice: Server got SIGINT from pid 219, uid 501; shutting down...
+2015-06-06T23:43:11.967633000 109497.255557s notice: Shutting down client connections...
+2015-06-06T23:43:11.967768000 109497.255691s notice: All client connections closed.
+2015-06-06T23:43:11.967780000 109497.255703s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-06T23:43:12.033329000 109497.321254s notice: Storage engine shut down.
+2015-06-07T19:35:53.204452000 0.657908s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-07T19:35:53.448717000 0.902170s notice: Running on Darwin 14.3.0 x86_64
+2015-06-07T19:35:53.448756000 0.902209s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-06-07T19:35:54.019577000 1.473078s info: Automatically using cache size of 100 MB
+2015-06-07T19:35:54.019586000 1.473087s warn: Cache size does not leave much memory for server and query overhead (available memory: 1069 MB).
+2015-06-07T19:35:54.019589000 1.473090s warn: Cache size is very low and may impact performance.
+2015-06-07T19:35:54.020084000 1.473584s notice: Listening for intracluster connections on port 29015
+2015-06-07T19:35:54.020656000 1.474156s notice: Listening for client driver connections on port 28015
+2015-06-07T19:35:54.020724000 1.474225s notice: Listening for administrative HTTP connections on port 8080
+2015-06-07T19:35:54.020731000 1.474232s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-07T19:35:54.020735000 1.474235s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-07T19:35:54.020741000 1.474241s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-07T19:35:54.582363000 2.035864s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-07T23:48:01.725490000 15129.833293s notice: Server got SIGINT from pid 219, uid 501; shutting down...
+2015-06-07T23:48:01.725620000 15129.833423s notice: Shutting down client connections...
+2015-06-07T23:48:01.725801000 15129.833603s notice: All client connections closed.
+2015-06-07T23:48:01.725803000 15129.833606s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-07T23:48:02.009825000 15130.117676s notice: Storage engine shut down.
+2015-06-08T15:19:23.098285000 0.651722s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-08T15:19:23.190339000 0.743783s notice: Running on Darwin 14.3.0 x86_64
+2015-06-08T15:19:23.190399000 0.743833s notice: Loading data from directory /Users/belenduchene/Sites/React-play-famous/rethinkdb_data
+2015-06-08T15:19:24.041390000 1.594872s info: Automatically using cache size of 2405 MB
+2015-06-08T15:19:24.041974000 1.595455s notice: Listening for intracluster connections on port 29015
+2015-06-08T15:19:24.042678000 1.596159s notice: Listening for client driver connections on port 28015
+2015-06-08T15:19:24.042746000 1.596227s notice: Listening for administrative HTTP connections on port 8080
+2015-06-08T15:19:24.042750000 1.596232s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-08T15:19:24.042752000 1.596234s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-08T15:19:24.042755000 1.596236s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-08T15:19:24.868476000 2.422006s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-08T23:04:06.321202000 27885.099524s notice: Server got SIGINT from pid 231, uid 501; shutting down...
+2015-06-08T23:04:06.321453000 27885.099774s notice: Shutting down client connections...
+2015-06-08T23:04:06.321924000 27885.100246s notice: All client connections closed.
+2015-06-08T23:04:06.321927000 27885.100248s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-08T23:04:06.387260000 27885.165582s notice: Storage engine shut down.
+2015-06-09T14:51:02.710157000 0.060434s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-09T14:51:02.724588000 0.074864s notice: Running on Darwin 14.3.0 x86_64
+2015-06-09T14:51:02.724626000 0.074900s notice: Loading data from directory /Users/belenduchene/sites/react-play-famous/rethinkdb_data
+2015-06-09T14:51:03.522628000 0.872902s info: Automatically using cache size of 2602 MB
+2015-06-09T14:51:03.523183000 0.873457s notice: Listening for intracluster connections on port 29015
+2015-06-09T14:51:03.523967000 0.874241s notice: Listening for client driver connections on port 28015
+2015-06-09T14:51:03.524042000 0.874318s notice: Listening for administrative HTTP connections on port 8080
+2015-06-09T14:51:03.524061000 0.874335s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-09T14:51:03.524074000 0.874349s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-09T14:51:03.524078000 0.874352s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-09T14:51:04.087503000 1.437819s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-09T22:50:11.329113000 28749.938314s notice: Server got SIGINT from pid 216, uid 501; shutting down...
+2015-06-09T22:50:11.329187000 28749.938387s notice: Shutting down client connections...
+2015-06-09T22:50:11.329303000 28749.938504s notice: All client connections closed.
+2015-06-09T22:50:11.329306000 28749.938506s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-09T22:50:11.389704000 28749.998905s notice: Storage engine shut down.
+2015-06-10T21:47:13.946674000 0.653282s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-10T21:47:14.028839000 0.735455s notice: Running on Darwin 14.3.0 x86_64
+2015-06-10T21:47:14.028899000 0.735504s notice: Loading data from directory /Users/belenduchene/sites/react-play-famous/rethinkdb_data
+2015-06-10T21:47:14.759122000 1.465778s info: Automatically using cache size of 884 MB
+2015-06-10T21:47:14.759674000 1.466330s notice: Listening for intracluster connections on port 29015
+2015-06-10T21:47:14.760590000 1.467246s notice: Listening for client driver connections on port 28015
+2015-06-10T21:47:14.760724000 1.467380s notice: Listening for administrative HTTP connections on port 8080
+2015-06-10T21:47:14.760731000 1.467387s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-10T21:47:14.760734000 1.467390s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-10T21:47:14.760746000 1.467402s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-10T21:47:30.364739000 17.072100s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-10T22:35:43.745425000 2910.589936s notice: Server got SIGINT from pid 224, uid 501; shutting down...
+2015-06-10T22:35:43.745679000 2910.590190s notice: Shutting down client connections...
+2015-06-10T22:35:43.745832000 2910.590344s notice: All client connections closed.
+2015-06-10T22:35:43.745844000 2910.590355s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-10T22:35:43.809690000 2910.654201s notice: Storage engine shut down.
+2015-06-11T17:15:35.279215000 0.578215s notice: Running rethinkdb 1.16.3 (CLANG 6.0 (clang-600.0.57))...
+2015-06-11T17:15:35.353560000 0.652556s notice: Running on Darwin 14.3.0 x86_64
+2015-06-11T17:15:35.353611000 0.652607s notice: Loading data from directory /Users/belenduchene/sites/react-play-famous/rethinkdb_data
+2015-06-11T17:15:36.575128000 1.874177s info: Automatically using cache size of 2851 MB
+2015-06-11T17:15:36.575528000 1.874576s notice: Listening for intracluster connections on port 29015
+2015-06-11T17:15:36.576108000 1.875157s notice: Listening for client driver connections on port 28015
+2015-06-11T17:15:36.576168000 1.875216s notice: Listening for administrative HTTP connections on port 8080
+2015-06-11T17:15:36.576175000 1.875223s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-11T17:15:36.576177000 1.875225s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-11T17:15:36.576179000 1.875227s notice: Server ready, "iMac_de_Belen_local_zdd" a984585c-e356-41e5-adf9-1ed5e38be817
+2015-06-11T17:15:37.135489000 2.434538s notice: A newer version of the RethinkDB server is available: 2.0.2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-06-12T17:15:33.372925000 86402.472426s notice: A newer version of the RethinkDB server is available: 2.0.3. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.

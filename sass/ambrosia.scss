@@ -2,6 +2,7 @@
 @import "_professional";
 @import "_auth";
 @import "_openarestaurant";
+@import "_restaurantname";
 @import "compass/css3";
 @include font-face("Bebas", font-files("/public/fonts/Bebas/Bebas-webfont.woff", "/public/fonts/Bebas/Bebas-webfont.ttf", "/public/fonts/Bebas/Bebas-webfont.svg"), "/public/fonts/Bebas/Bebas-webfont.eot");
 .famous-surface {

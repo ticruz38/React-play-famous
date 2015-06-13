@@ -7,3 +7,4 @@
 /bundle.js
 /build
 /npm-debug.log
+/rethinkdb_data

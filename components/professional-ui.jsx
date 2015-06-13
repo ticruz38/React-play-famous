@@ -61,7 +61,7 @@ var Pro = React.createClass({
             to allways make it better!
           </p>
 
-          <Link className='button' to='openarestaurant'>Open a Restaurant</Link>
+          <Link className='button' to='/open/1st-step'>Open a Restaurant</Link>
       </div>
     );
   }

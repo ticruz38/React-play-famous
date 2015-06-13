@@ -1,0 +1,14 @@
+div.open {
+  font-size: 0.5em;
+  margin: 0.5em;
+  text-align: center;
+  input.open, textarea.open {
+    padding: none !important;
+    width: 80%;
+    font-size: inherit;
+    margin: 0.5em;
+  }
+  span {
+    background-color: $bgColor;
+  }
+}

@@ -1,5 +1,6 @@
+$bgColor: rgba(255, 255, 255, 0.8);
+
 div.openarestaurant {
-  background-color: rgba(255, 255, 255, 0.8);
   //padding: 1em;
   .plus-icon {
     background-image: url("/public/icons/plus-icon.jpg");
@@ -10,22 +11,34 @@ div.openarestaurant {
     cursor: pointer;
   }
   div.container {
-    margin-top: 1em;
-    display: flex;
-    /* height: 15%; */
     font-size: 2vmin;
     text-align: center;
-    flex-flow: row wrap;
     a.item {
       border: 1px solid black;
       width: 10%;
       flex-grow: 1;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: $bgColor;
       cursor: pointer;
     }
     a.active {
       flex-grow: 1.5;
-      background-color: rgba(17, 141, 48, 0.81);
+      background-color: $bgColor;
+    }
+    svg.pointer {
+      width: 8em;
+    }
+    svg.arrow {
+      width: 5em;
+      top: 3em;
+      position: absolute;
+    }
+    svg.arrow.right {
+      @extend svg.arrow;
+      right: 1em;
+    }
+    svg.arrow.left {
+      @extend svg.arrow;
+      left: 1em;
     }
   }
   div.list-container {
@@ -33,24 +46,79 @@ div.openarestaurant {
     text-align: center;
     margin: 1em;
     font-size: 3vmin;
+    div.focus {
+      @extend .famous-surface;
+      background-color: $bgColor;
+      text-align: left;
+      h1 {
+        margin: 0.5em 0 0 0.75em;
+      }
+      span.close-icon {
+        background-image: url("/public/icons/close.svg");
+        width: 1em;
+        height: 1em;
+        cursor: pointer;
+        display: table-cell;
+        //keep it!!
+        position: absolute;
+      }
+      img {
+        position: absolute;
+        margin-left: 1.5em;
+      }
+      input {
+        font-size: 2em;
+        font-family: inherit;
+        font-weight: bold;
+        size: 4em;
+        width: 9em;
+        margin: 0.5em 0 0 0.75em;
+      }
+      div.description {
+        width: 50%;
+        left: 50%;
+        position: absolute;
+        textarea {
+          font-family: inherit;
+          width: 100%;
+          font-size: 0.5em;
+          height: 8em;
+        }
+        p {
+          width: 100%;
+          font-size: 0.5em;
+          height: 8em;
+          margin: 0;
+        }
+        h2 {
+          margin: 0;
+        }
+      }
+    }
     div.card-item {
       @extend .famous-surface;
       margin-bottom: 1em;
       width: 30%;
       height: 8em;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: $bgColor;
       overflow: hidden;
+      h1 {
+        margin: 0;
+        font-size: 1em;
+        backface-visibility: hidden;
+      }
       input {
         font-size: 1em;
         width: 60%;
         border: none;
       }
       span.close-icon {
-        background-image: url("/public/icons/close.png");
+        background-image: url("/public/icons/close.svg");
         width: 1em;
         height: 1em;
         cursor: pointer;
-        display: table-cell; //keep it!!
+        display: table-cell;
+        //keep it!!
         position: absolute;
       }
       .unvisible {
@@ -60,8 +128,8 @@ div.openarestaurant {
         z-index: -1;
       }
       img {
-        width: 8em;
-        height: 7em;
+        width: 100%;
+        height: 80%;
         border: 1px solid black;
       }
     }

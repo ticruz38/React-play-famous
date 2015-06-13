@@ -238,46 +238,18 @@ View.prototype.setChild = function setChild(object) {
   }
 };
 
-View.prototype.testChild = function testChild(object) {
-  console.log('testChild', object.length);
-  if (object.length) {
-    console.log(object);
-    this._childElements = []; //remove old childs
-    for (var i = 0; i < object.length; i++) {
-      var child = object[i];
-      if (!(child instanceof View)) {
-        child = new View({
-          element: child
-        });
-        this._childElements.push(child);
-      } else {
-        this._childElements.push(child);
-      }
-    }
-  } else {
-    if (!(object instanceof View)) {
-      object = new View({
-        element: object
-      });
-      this._childElements.push(object);
-    } else {
-      this._childElements.push(object);
-    }
-  }
-};
-
 View.prototype.setModifier = function(Modifier) {
   Modifier instanceof Function ? this.modifier = new Modifier() : this.modifier = Modifier;
-  this.setState = function(trans) {
+  this.setState = function(context, child, trans) {
     //this.setState never take transition
-    this.modifier.setState(this.context, this._childElements, trans);
+    this.modifier.setState(context, child, trans);
   };
   if (this.modifier.commit) {
     this.commitState = function() {
       this.modifier.commitState();
     };
   }
-  this.setState();
+  this.setState(this.context, this._childElements);
   //        this._eventInput.emit('refresh');
 };
 
@@ -342,7 +314,7 @@ View.prototype.commit = function(context) {
   var length = this._childElements.length;
   if (this._length !== length) {
     this._length = length;
-    if (this.setState) this.setState(true);
+    if (this.setState) this.setState(context, this._childElements);
   }
   if (_xyNotEquals(this._size, size) || _xyNotEquals(this._target, target)) {
     if (!this._size) this._size = [0, 0];
@@ -350,7 +322,7 @@ View.prototype.commit = function(context) {
     this._size[0] = size[0];
     this._size[1] = size[1];
     this._sizeDirty = true;
-    if (this.setState) this.setState();
+    if (this.setState) this.setState(context, this._childElements);
   }
   if (this._sizeDirty && target) {
     if (this._size) {
