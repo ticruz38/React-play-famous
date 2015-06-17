@@ -85,7 +85,7 @@ var Slide = React.createClass({
 
   render: function() {
     return (
-    <div className='container'>
+    <div className='slide'>
       <Link to={this.props.from} className={this.props.from ? 'from' : 'hidden'}>
         <svg className = "arrow left" viewBox="0 0 60 60">
           <path d='M60,0 L25,30 L60,60' stroke='white' strokeWidth='4' strokeLinecap='round' fill="none"/>
@@ -179,6 +179,7 @@ Open.secondStep = React.createClass({
       // if (transition.path === '/open/3rd-step') {
       //   component.getS
       // }
+      component.executeAction('')
       console.log('transitionfrom 2nd step', transition, component.getStore(ProStore));
     }
   },
@@ -347,6 +348,7 @@ var CardItem = React.createClass({
       this.getStore(ProStore).remove(this.props.index, focus);
     } else {
       this.getDOMNode().style.overflow = 'hidden';
+      this.getDOMNode().style.backgroundColor = '';
       this.displayList = false;
       focus.active = false;
       focus.index = undefined;
@@ -363,6 +365,7 @@ var CardItem = React.createClass({
     focus.active = true;
     focus.index = this.props.index;
     this.getDOMNode().style.overflow = 'scroll';
+    this.getDOMNode().style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
     CardModifier.focus(this.props.index, childs);
   },
 
@@ -466,10 +469,138 @@ Open.thirdStep = React.createClass({
     }
   },
 
+  componentDidMount: function () {
+    MainLayout.bigState();
+  },
+
   render: function () {
     return(
-      <div></div>
+      <div className = 'openarestaurant third'>
+        <Slide to='/' from='/open/2nd-step' title='3rd Step' index= {2} description = 'Here is your dashboard'/>
+        <div>
+          <TimeLine/>
+          <Dashboard/>
+        </div>
+      </div>
     );
+  }
+});
+
+var fake = function () {
+  var fakeCommands = [];
+  for (var i = 0; i < 40; i++) {
+    var co = {
+      duration: Math.floor((Math.random() * 5) + 1),
+      price: Math.floor((Math.random() * 40) + 1),
+      time: Math.floor((Math.random() * 1440) + 1),
+      details: [{name:'burger', picture:'public/images/burger.jpg'}, {name:'drink', picture:'public/images/drink.jpg'}],
+      payed: i % 3 ? true : false
+    };
+    fakeCommands.push(co);
+  }
+  return fakeCommands;
+};
+
+var commands = fake();
+
+var TimeLine = React.createClass({
+
+  mixins: [FluxibleMixin],
+
+  getInitialState: function () {
+    var d = new Date();
+    console.log(d, d.toTimeString(), d.toLocaleTimeString());
+    var state = {
+      commands: [],
+      hours: d.getHours(),
+      min: d.getMinutes(),
+      sec: d.getSeconds(),
+    };
+    return state;
+  },
+
+  componentDidMount: function () {
+    this.setState({commands: commands});
+  },
+
+  render: function () {
+    var createCommands = function (command) {
+      return (
+          <rect x={command.time} y={command.payed ? -command.price : 0} height={command.price} width={command.duration} fill ='red'/>
+      );
+    };
+    var time = this.state.hours * 60 + this.state.min;
+    var d = 'M' + time + ',-100 v200';
+    return (
+    <div className='timeline'>
+      <svg className= 'command' viewBox="0 -100 1440 200">
+
+        <rect x='0' y='-100' width={this.state.hours * 60 + this.state.min} height='200' fill = 'rgba(0, 0, 0, 0.8)'/>
+        <rect x={this.state.hours * 60 + this.state.min} y='-100' width={1440 - (this.state.hours * 60 + this.state.min)} height='200' fill = 'rgba(255, 255, 255, 0.8)'/>
+        <path d='M0,0 H1440' stroke = 'black' strokeWidth = '1'/>
+        <path d={d} stroke = 'grey' strokeWidth = '4' />
+      {this.state.commands.map(createCommands)}
+      </svg>
+    </div>
+  );
+  }
+});
+
+var Dashboard = React.createClass({
+
+  getInitialState: function () {
+    var state = {
+      commands: []
+    };
+    return state;
+  },
+
+  componentDidMount: function () {
+    var com = commands.sort(function(a, b) {
+        if (a.time < b.time) return -1;
+        if (a.time > b.time) return 1;
+        return 0;
+    });
+    this.setState({commands: com});
+
+    var bodyHeight = document.querySelector('.body').clientHeight;
+    var TimelineHeight = document.querySelector('.timeline').clientHeight;
+    var height = bodyHeight-TimelineHeight;
+    console.log(bodyHeight, document.querySelector('.body'), window.BodyView);
+    this.getDOMNode().style.height = height + 'px';
+  },
+
+  render: function () {
+    console.log(this.state.commands);
+    var createCommands = function (command) {
+      var createDetail = function (detail) {
+        return (
+          <div className = 'detail'>
+            <img src='detail.picture'/>
+            {detail.name}
+          </div>
+        );
+      };
+      var getTime = function(time) {
+        var hours = Math.floor(time/60);
+        var min = Math.round((time/60 - hours) * 60);
+        min = min < 10 ? '0' + min : min;
+        return hours < 12 ? hours + ':' + min + 'AM' :  hours + ':' + min + 'PM';
+      };
+      return (
+        <div className = 'command'>
+          <h1>Mr Dupond<span className='price'>{command.price + ' BitCoin'}</span><span className='time'>{getTime(command.time)}</span></h1>
+          <div className = 'details'>
+            {command.details.map(createDetail)}
+          </div>
+        </div>
+      );
+    };
+    return (
+    <div className = "dashboard">
+      {this.state.commands.map(createCommands)}
+    </div>
+  );
   }
 });
 
