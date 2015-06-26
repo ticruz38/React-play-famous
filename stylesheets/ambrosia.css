@@ -96,7 +96,8 @@ form#login span.close-icon {
 /* line 62, ../sass/_auth.scss */
 .question {
   margin: 2em;
-  font-size: 50%;
+  font-size: 1vmin;
+  cursor: pointer;
 }
 
 /* line 3, ../sass/_openarestaurant.scss */
