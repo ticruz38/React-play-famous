@@ -1,4 +1,4 @@
-/*global logged, MainView, AuthView, MenuView, BodyView */
+/*global logged*/
 
 'use strict';
 var React = require('react');
@@ -17,36 +17,12 @@ bootstrapDebug('rehydrating app', dehydratedState);
 
 
 //famous stuff
+  var View = require('./famous-helpers/view');
   var Engine = require('famous/core/Engine');
   var famousContext = Engine.createContext(document.body);
   window.famousContext = famousContext;
-  var MainLayout = require('./famous-modifier/mainlayout');
-  window.MainLayout =  new MainLayout();// share MainLayout in client code;
+  window.Famous = View;
 
-  var MenuLayout = require('./famous-modifier/menulayout');
-  MenuLayout = new MenuLayout();
-  window.MenuLayout = MenuLayout;
-
-  var View = require('./famous-helpers/view');
-  window.MainView = new View({
-    element: document.getElementById('app')
-  });
-  window.AuthView = new View({element : document.querySelector('div.auth')});
-  var HomeView = new View({
-    element: document.querySelector('.home-page')
-  });
-  window.MenuView = new View({
-    element: document.querySelector('.list')
-  });
-  window.BodyView = new View({
-    element: document.querySelector('.body')
-  });
-  MainView.setChild([HomeView, MenuView]);
-  MainView.setModifier(MenuLayout);
-  HomeView.setModifier(window.MainLayout);
-  famousContext.add(MainView);
-  var Childs = [document.querySelector('h1.ambrosia'), AuthView, BodyView, document.querySelector('svg')];
-  HomeView.setChild(Childs);
 
 function RenderApp(context, Handler) {
     bootstrapDebug('React Rendering');

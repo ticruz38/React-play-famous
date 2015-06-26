@@ -10,6 +10,13 @@ var ReactTransitionGroup = React.addons.TransitionGroup;
 var AuthStore = require('../stores/authstore.js');
 var Login = require('./login');
 var loggedIn = require('./loggedIn');
+var authModifier = require('../famous-modifier/authlayout');
+var Easing = require('famous/transitions/Easing');
+
+var easing = {
+    duration: 600,
+    curve: Easing.outBack
+};
 
 var FluxibleMixin = require('fluxible').FluxibleMixin;
 
@@ -33,11 +40,18 @@ var Auth = React.createClass({
 
     fill: function () {
       this.getStore(AuthStore).fillIt(true);
-      MainLayout.AuthState();
+      console.log(authView.context.size[0]/3);
+      authView.transitionable.size.set([authView.context.size[0]/3, authView.context.size[1]/3], easing);
+      authView.transitionable.transform.setTranslate([authView.context.size[0]/3, authView.context.size[1]/4, 10], easing);
     },
 
-
     componentDidMount: function () {
+      window.authView = famousContext.add(this.getDOMNode());
+      authView.setModifier(authModifier);
+      //authView.setModifier(authModifier);
+      console.log(authView);
+      authView.transitionable.transform.setTranslate([authView.context.size[0]- authView.context.size[0]/10, 0, 0]);
+      authView.transitionable.size.set([authView.context.size[0]/12, authView.context.size[1]/10]);
     },
 
     render: function() {
@@ -49,7 +63,6 @@ var Auth = React.createClass({
           </div>
         );
     }
-
 });
 
 module.exports = Auth;

@@ -1,4 +1,4 @@
-/*global MainLayout, BodyView*/
+/*global famousContext*/
 'use strict';
 
 var React = require('react/addons');
@@ -19,67 +19,7 @@ var Link = Router.Link;
 var field = {};
 
 
-var Open = React.createClass({
-
-    mixins: [FluxibleMixin, Router.State],
-
-    statics: {
-      storeListeners: {
-          _onChange: [AuthStore]
-        }
-    },
-
-    getInitialState: function () {
-        return this.getStore(AuthStore).getState();
-
-    },
-
-    getStateFromStores: function () {
-      return {
-      };
-    },
-
-    _onChange: function () {
-      this.setState(this.getStateFromStores);
-    },
-
-    open: function (e) {
-      e.preventDefault();
-      // var details = {};
-      // var el = e.target.getElementsByClassName('open');
-
-    },
-
-    getSlide: function () {
-      console.log(this.getPath());
-    },
-
-    componentDidMount: function () {
-      // if(!this.state.logged) {
-      //   MainLayout.AuthState();
-      //   this.getStore(AuthStore).fillIt(true);
-      // }
-    },
-
-    render: function () {
-      this.getSlide();
-      return (
-      <div className='openarestaurant'>
-        <div className='container'>
-          <Link to='/open/1st-step' className='item'>
-            <h2>1st Step</h2>
-            <p>Register your business</p>
-          </Link>
-          <Link to='/open/2nd-step' className='item'>
-            <h2>2nd Step</h2>
-            <p>Settle your card</p>
-          </Link>
-        </div>
-        <RouteHandler/>
-      </div>
-    );
-  }
-});
+var Open = {};
 
 var Slide = React.createClass({
 
@@ -88,19 +28,19 @@ var Slide = React.createClass({
     <div className='slide'>
       <Link to={this.props.from} className={this.props.from ? 'from' : 'hidden'}>
         <svg className = "arrow left" viewBox="0 0 60 60">
-          <path d='M60,0 L25,30 L60,60' stroke='white' strokeWidth='4' strokeLinecap='round' fill="none"/>
+          <path d='M60,0 L25,30 L60,60' stroke='black' strokeWidth='4' strokeLinecap='round' fill="none"/>
         </svg>
       </Link>
       <h2>{this.props.title}</h2>
       <p>{this.props.description}</p>
       <svg className = 'pointer'viewBox="0 0 60 20">
-        <circle cx = '10' cy = "10" r = "7" stroke="white" strokeWidth="0.5" fill = {this.props.index === 0 ? 'white' : 'none'}/>
-        <circle cx = '30' cy = "10" r = "7" stroke="white" strokeWidth="0.5" fill = {this.props.index === 1 ? 'white' : 'none'}/>
-        <circle cx = '50' cy = "10" r = "7" stroke="white" strokeWidth="0.5" fill = {this.props.index === 2 ? 'white' : 'none'}/>
+        <circle cx = '10' cy = "10" r = "7" stroke="black" strokeWidth="0.5" fill = {this.props.index === 0 ? 'black' : 'none'}/>
+        <circle cx = '30' cy = "10" r = "7" stroke="black" strokeWidth="0.5" fill = {this.props.index === 1 ? 'black' : 'none'}/>
+        <circle cx = '50' cy = "10" r = "7" stroke="black" strokeWidth="0.5" fill = {this.props.index === 2 ? 'black' : 'none'}/>
       </svg>
       <Link to={this.props.to} className={this.props.to ? 'to' : 'hidden'}>
         <svg className = 'arrow right' viewBox="0 0 60 60">
-          <path d='M0,0 L35,30 L0,60' stroke='white' strokeWidth='4' strokeLinecap='round' fill="none"/>
+          <path d='M0,0 L35,30 L0,60' stroke='black' strokeWidth='4' strokeLinecap='round' fill="none"/>
         </svg>
       </Link>
     </div>
@@ -126,7 +66,6 @@ Open.firstStep = React.createClass({
   },
 
   componentDidMount: function () {
-    MainLayout.initialState();
   },
 
   isFilled: function () {
@@ -179,7 +118,7 @@ Open.secondStep = React.createClass({
       // if (transition.path === '/open/3rd-step') {
       //   component.getS
       // }
-      component.executeAction('')
+      //component.executeAction('')
       console.log('transitionfrom 2nd step', transition, component.getStore(ProStore));
     }
   },
@@ -195,7 +134,6 @@ Open.secondStep = React.createClass({
 
   componentDidMount: function () {
     // console.log('secondStep didmount');
-    MainLayout.bigState();
   },
 
   add: function () {
@@ -251,7 +189,7 @@ var Focus = React.createClass({
 
   componentDidMount: function () {
     CardModifier.superFocus();
-    BodyView.setChild(this.getDOMNode());
+    CardView.add(this.getDOMNode());
   },
 
   onNameChange: function (e) {
@@ -291,14 +229,18 @@ var ReactTransitionGroup = React.addons.TransitionGroup;
 
 var CardModifier = require('../famous-modifier/cardlayout');
 CardModifier = new CardModifier();
+var CardView = null;
 
 var CardList = React.createClass({
 
   componentDidMount: function () {
+    console.log('cardlist mount', CardView);
     var childs = React.findDOMNode(this.refs.listcontainer).children;
-    console.log(childs);
-    BodyView.setChild(childs);
-    BodyView.setModifier(CardModifier);
+    if(!CardView) {
+      CardView = famousContext.add(this.getDOMNode());
+      CardView.setModifier(CardModifier);
+    }
+    CardView.set(childs);
   },
   render: function () {
     var createItem = function(item, index) {
@@ -345,6 +287,7 @@ var CardItem = React.createClass({
 
   close: function () {
     if(!focus.active) {
+      if(!this.View) return;
       this.getStore(ProStore).remove(this.props.index, focus);
     } else {
       this.getDOMNode().style.overflow = 'hidden';
@@ -370,11 +313,14 @@ var CardItem = React.createClass({
   },
 
   componentWillLeave: function (cb) {
-    CardModifier.remove(this.props.index, cb, BodyView);
+    console.log(this.View);
+    CardModifier.remove(this.View.render(), cb, CardView);
   },
 
   componentDidMount: function () {
-    BodyView.setChild(this.getDOMNode());
+    if (!CardView) return;
+    console.log('carditem mount');
+    this.View = CardView.add(this.getDOMNode());
   },
 
   componentDidUpdate: function () {
@@ -470,7 +416,6 @@ Open.thirdStep = React.createClass({
   },
 
   componentDidMount: function () {
-    MainLayout.bigState();
   },
 
   render: function () {
@@ -566,7 +511,7 @@ var Dashboard = React.createClass({
     var bodyHeight = document.querySelector('.body').clientHeight;
     var TimelineHeight = document.querySelector('.timeline').clientHeight;
     var height = bodyHeight-TimelineHeight;
-    console.log(bodyHeight, document.querySelector('.body'), window.BodyView);
+    console.log(bodyHeight, document.querySelector('.body'));
     this.getDOMNode().style.height = height + 'px';
   },
 

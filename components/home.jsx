@@ -44,8 +44,6 @@ var Home = React.createClass({
     },
 
     onBurgerClicked: function () {
-
-      MenuLayout.menuState();
     },
 
     logStatus: function () {
@@ -69,15 +67,14 @@ var Home = React.createClass({
     render: function () {
         return (
           <div>
-            <div className='home-page famous-surface'>
-              <h1 className='ambrosia famous-surface'>Ambrosia</h1>
+            <div className = 'navbar'>
               <SvgButton/>
+              <h1 className='ambrosia'>Ambrosia</h1>
               <Auth/>
-              <div className='body'>
-              <RouteHandler/>
-              </div>
             </div>
-            <Menu/>
+            <div className='body'>
+            <RouteHandler/>
+            </div>
           </div>
         );
     }

@@ -206,9 +206,6 @@ View.prototype.setOptions = function setOptions(options) {
 };
 
 View.prototype.setElement = function setElement(el) {
-  if (this._element.parentNode) {
-    this._element.parentNode.removeChild(this._element);
-  }
   this._element = el;
 };
 

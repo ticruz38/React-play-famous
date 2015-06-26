@@ -3,14 +3,19 @@
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
  /*jslint node: true */
- /*global AuthView, MainLayout*/
+ /*global authView*/
  'use strict';
 
-var FormLayout = require('../famous-modifier/authlayout');
-FormLayout = new FormLayout();
 var AuthAction = require('../actions/auth');
 var AuthStore = require('../stores/authstore.js');
 var FluxibleMixin = require('fluxible').FluxibleMixin;
+
+var Easing = require('famous/transitions/Easing');
+
+var easing = {
+    duration: 600,
+    curve: Easing.outBack
+};
 
 var React = require('react');
 
@@ -33,12 +38,13 @@ var Login = React.createClass({
     },
 
     switch: function (e) { //switch and rotate the authwindow
-      FormLayout.switchState();
+      authView.modifier.switchState();
     },
 
     close: function () {
       this.getStore(AuthStore).fillIt(false);
-      MainLayout.searchState();
+      authView.transitionable.transform.setTranslate([authView.context.size[0]- authView.context.size[0]/10, 0, 0], easing);
+      authView.transitionable.size.set([authView.context.size[0]/12, authView.context.size[1]/10], easing);
     },
 
     login: function (e) {
@@ -65,13 +71,13 @@ var Login = React.createClass({
 
 
     componentDidMount: function () {
-      var View = require('../famous-helpers/view');
-      var FormView = new View({
-        element: document.querySelector('.form')
-      });
-      AuthView.setChild(FormView);
-      FormView.setChild([document.querySelector('#signup'), document.querySelector('#login')]);
-      FormView.setModifier(FormLayout);
+      authView.set([document.querySelector('#signup'), document.querySelector('#login')]);
+      // var FormView = new View({
+      //   element: document.querySelector('.form')
+      // });
+      // AuthView.setChild(FormView);
+      // FormView.setChild([document.querySelector('#signup'), document.querySelector('#login')]);
+      // FormView.setModifier(FormLayout);
     },
 
     render: function() {

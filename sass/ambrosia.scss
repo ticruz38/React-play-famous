@@ -61,7 +61,6 @@
 
 .body {
   text-align: justify;
-  overflow: scroll;
 }
 a {
   color: black;
@@ -82,7 +81,7 @@ a {
     border: 1px solid black;
 }
 .burger-button {
-    @extend .famous-surface;
+    float: left;
     &:hover {
       cursor: pointer;
     }
@@ -90,6 +89,7 @@ a {
 h1.ambrosia {
     font-family: 'Bebas';
     margin: 0;
+    text-align: center;
 }
 .home-page {
   background-image: url("/public/images/burger.jpg");

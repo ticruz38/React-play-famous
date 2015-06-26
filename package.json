@@ -1,24 +1,24 @@
 {
-    "name": "ambrosia",
-    "version": "0.0.0",
-    "license": "MIT",
-    "devDependencies": {
-        "express": "^4.12.2",
-        "famous": "^0.3.5",
-        "react": "^0.13.0",
-        "reactify": "^1.1.0",
-        "watchify": "^2.4.0"
-    },
-    "browserify": {
-        "transform": [
+  "name": "ambrosia",
+  "version": "0.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.12.2",
+    "famous": "^0.3.5",
+    "react": "^0.13.0",
+    "reactify": "^1.1.0",
+    "watchify": "^2.4.0"
+  },
+  "browserify": {
+    "transform": [
       "reactify"
     ]
-    },
-    "main": "app.js",
-    "scripts": {
-        "build": "browserify app.js -o bundle.js",
-        "watch": "watchify app.js -o bundle.js --debug --verbose"
-    },
+  },
+  "main": "app.js",
+  "scripts": {
+    "build": "browserify app.js -o bundle.js",
+    "watch": "watchify app.js -o bundle.js --debug --verbose"
+  },
   "name": "ambrosia",
   "version": "0.0.0",
   "license": "MIT",

@@ -1,4 +1,5 @@
 var Easing = require('famous/transitions/Easing');
+var x, y;
 
 function Modifier(options) {
   this.focusElement = undefined;
@@ -18,23 +19,19 @@ var transition = {
 };
 
 function _initialState(trans) {
-  var gutter = this.size[0] / 16;
-  var x = this.size[0] / 8;
-  var y = 0;
+  var gutter = this.size[0] / 10;
+  x = 0;
+  y = 0;
   var height = this.options ? this.size[1] * this.options.height : this.size[1]/4;
   this.elements.forEach(function(element, i) {
-    if (!element.transitionable.initialize) {
-      _initialize.call(this, element, x);
-      trans = transition;
-      element.transitionable.initialize = true;
-    }
+    if(!element.initialize) _initialize(element);
     element.transitionable.origin.set([0.5, 0]);
     element.transitionable.size.set([this.size[0] / 4, height], trans);
     element.transitionable.transform.setTranslate([x, y, 0], trans);
     x += this.size[0] / 4 + gutter;
-    if (x > this.size[0]) {
+    if (x >= this.size[0] - gutter) {
       y += height + gutter;
-      x = this.size[0] / 8;
+      x = 0;
     }
     //element._element.style.backgroundColor = 'hsl(' + color.get() + ', 75%, 50%)';
   }.bind(this));
@@ -44,12 +41,13 @@ function _initialize(element) {
   element.transitionable.size.set([0, 0]);
   element.transitionable.transform.setTranslate([0, 0, 0]);
   element.transitionable.transform.setRotate([0, 0, 0]);
+  element.initialize = true;
 }
 
 Modifier.prototype.setState = function(context, elements) {
   if (!context) return;
-  //this.fontSize = elements[0]._element.style.fontSize;
-  this.size = context.size;
+  console.log(context, elements.length);
+  this.size = context;
   var trans = (this.elements.length !== this.length) ? transition : null;
   this.elements = elements;
   this.length = this.elements.length;
@@ -58,43 +56,44 @@ Modifier.prototype.setState = function(context, elements) {
 
 
 Modifier.prototype.remove = function(id, cb, view) {
-  var element = this.elements[id];
-  element.transitionable.opacity.set(0, transition);
-  element.transitionable.size.set([0, 0], transition, function() {
     cb();
-    view.removeChild(id);
-  });
+    view.remove(id);
 };
 
 Modifier.prototype.removeChild = function(id, cb) {
   console.log('removechild');
-  this.focusElement.removeChild(id);
+  this.focusElement.remove(id);
 };
 
 function _focus(transition) {
-  var gutter = this.size[0] / 16;
-  var x = this.size[0] / 8;
+  var gutter = this.size[0] / 10;
+  var x = 0;
   var y = 0;
   var height = this.options ? this.size[1] * this.options.height : this.size[1]/4;
   this.elements.forEach(function(element, i) {
-    if (!element.transitionable.initialize) {
-      _initialize.call(this, element);
-      element.transitionable.initialize = true;
-    }
+    // if (!element.transitionable.initialize) {
+    //   _initialize.call(this, element);
+    //   element.transitionable.initialize = true;
+    // }
     if (this.focusElement.index === i) {
       this.focusElement._element.style.zIndex = 10;
       this.focusElement.transitionable.size.set([this.size[0] * 0.75, 2 * height], transition);
-      this.focusElement.transitionable.transform.setTranslate([this.size[0] / 2, y === 0 ? y + height/2 : y - height, 10], transition);
+      this.focusElement.transitionable.transform.setTranslate([this.size[0] / 8, y === 0 ? y + height/2 : y - height, 10], transition);
       this.focusElement.transitionable.transform.setRotate([0, 0, 0], transition);
+      x += this.size[0] / 4 + gutter;
+      if (x >= this.size[0] - gutter) {
+        y += height + gutter;
+        x = 0;
+      }
       return;
     }
     element.transitionable.origin.set([0.5, 0]);
     element.transitionable.size.set([this.size[0] / 4, height], transition);
     element.transitionable.transform.setTranslate([x, y, 0], transition);
     x += this.size[0] / 4 + gutter;
-    if (x > this.size[0]) {
+    if (x >= this.size[0] - gutter) {
       y += height + gutter;
-      x = this.size[0] / 8;
+      x = 0;
     }
     //element._element.style.backgroundColor = 'hsl(' + color.get() + ', 75%, 50%)';
   }.bind(this));
@@ -103,7 +102,7 @@ function _focus(transition) {
 Modifier.prototype.focus = function(id, childs) {
   this.focusElement = this.elements[id];
   this.focusElement.index = id;
-  if (childs.length) this.focusElement.setChild(childs);
+  if (childs.length) this.focusElement.set(childs);
   this.focusElement.setModifier(new childModifier({height : 1/2}));
   this.activeState = _focus;
   this.activeState(transition);
@@ -125,7 +124,7 @@ function _rotation(focus, el, set, cb) {
 
     }
   });
-  focus._childElements.forEach(function(el) {
+  focus._childs.forEach(function(el) {
     el.transitionable.transform.setRotate([0, set ? Math.PI : 0, 0], rotate);
   });
 }
@@ -157,7 +156,7 @@ Modifier.prototype.unSuperFocus = function(cb) {
 
 Modifier.prototype.child = function(child) {
   if (!this.focusElement) return;
-  this.focusElement.setChild(child);
+  this.focusElement.add(child);
 };
 
 
@@ -169,7 +168,7 @@ function childModifier(options) {
 
 childModifier.prototype.setState = function(context, elements) {
   if (!context) return;
-  this.size = context.size;
+  this.size = context;
   var trans = (this.elements.length !== this.length) ? transition : null;
   this.elements = elements;
   this.length = this.elements.length;
@@ -181,7 +180,7 @@ childModifier.prototype.remove = function(id, cb, view) {
   element.transitionable.opacity.set(0, transition);
   element.transitionable.size.set([0, 0], transition, function() {
     cb();
-    view.removeChild(id);
+    view.remove(id);
   });
 };
 

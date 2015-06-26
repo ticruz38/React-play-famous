@@ -31,7 +31,6 @@ var ProStore = createStore({
     } else {
       this.items[focus.index].childs.splice(id, 1);
     }
-    console.log(this.items);
     this.emitChange();
   },
 
@@ -39,7 +38,6 @@ var ProStore = createStore({
     if (!focus.active) {
       this.items = this.items.concat([item]);
     } else {
-      console.log(this.items[focus.index]);
       this.items[focus.index].childs = this.items[focus.index].childs.concat([item]);
     }
     this.emitChange();
@@ -54,7 +52,6 @@ var ProStore = createStore({
   unSuperFocus: function(item) {
     var path = this.focus.path;
     this.items[path[0]].childs[path[1]] = item;
-    console.log(item, this.items[path[0]].childs[path[1]]);
     this.focus = null;
     this.emitChange();
   },

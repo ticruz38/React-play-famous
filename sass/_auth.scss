@@ -1,13 +1,13 @@
 span.log {
     margin: 1em;
     font-family: "Bebas";
-    font-size: 50%;
-}
-div.form {
-    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 2vmin;
 }
 div.auth {
     @extend .famous-surface;
+    top:0px;
+    padding:1em;
+    z-index: 10;
 }
 input.signup {
     margin: 1em;
@@ -22,13 +22,13 @@ div.social {
     padding: 0.2em;
     display: table-cell;
     cursor: pointer;
-    font-size: 50%;
+    font-size: 2vmin;
     border: 1px solid black;
 }
 input.submit {
     text-align: center;
     margin: 1em;
-    font-size: 50%;
+    font-size: 2vmin;
     cursor: pointer;
     background-color: white;
     border: 1px solid black;
@@ -45,12 +45,13 @@ form#login {
     span.close-icon {
         background-image: url("/public/icons/close.svg");
         float: right;
-        width: 50px;
-        height: 50px;
+        width: 2vmin;
+        height: 2vmin;
         cursor: pointer;
     }
     display: table-cell;
     padding: 1em;
+    background-color: ghostwhite;
     @extend .famous-surface;
     //backface-visibility: hidden;
 }

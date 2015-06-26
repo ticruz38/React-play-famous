@@ -34,8 +34,11 @@ div.openarestaurant {
     cursor: pointer;
   }
   div.slide {
+    position: relative;
     font-size: 2vmin;
     text-align: center;
+    margin: 1em;
+    background-color: slategrey;
     a.item {
       border: 1px solid black;
       width: 10%;
@@ -51,8 +54,10 @@ div.openarestaurant {
       width: 8em;
     }
     svg.arrow {
-      width: 5em;
-      top: 3em;
+      width: 4em;
+      top: 1em;
+      // bottom: auto;
+      padding: 1em;
       position: absolute;
     }
     svg.arrow.right {
@@ -78,8 +83,8 @@ div.openarestaurant {
       }
       span.close-icon {
         background-image: url("/public/icons/close.svg");
-        width: 1em;
-        height: 1em;
+        width: 2vmin;
+        height: 2vmin;
         cursor: pointer;
         display: table-cell;
         //keep it!!
