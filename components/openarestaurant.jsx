@@ -415,6 +415,17 @@ Open.thirdStep = React.createClass({
     }
   },
 
+  getInitialState: function () {
+    var d = new Date();
+    var state = {
+      commands: [],
+      hours: d.getHours(),
+      min: d.getMinutes(),
+      sec: d.getSeconds(),
+    };
+    return state;
+  },
+
   componentDidMount: function () {
   },
 
@@ -423,8 +434,8 @@ Open.thirdStep = React.createClass({
       <div className = 'openarestaurant third'>
         <Slide to='/' from='/open/2nd-step' title='3rd Step' index= {2} description = 'Here is your dashboard'/>
         <div>
-          <TimeLine/>
-          <Dashboard/>
+          <TimeLine time = {this.state}/>
+          <Dashboard time = {this.state}/>
         </div>
       </div>
     );
@@ -452,19 +463,7 @@ var TimeLine = React.createClass({
 
   mixins: [FluxibleMixin],
 
-  getInitialState: function () {
-    var d = new Date();
-    console.log(d, d.toTimeString(), d.toLocaleTimeString());
-    var state = {
-      commands: [],
-      hours: d.getHours(),
-      min: d.getMinutes(),
-      sec: d.getSeconds(),
-    };
-    return state;
-  },
-
-  componentDidMount: function () {
+  componentWillMount: function () {
     this.setState({commands: commands});
   },
 
@@ -474,22 +473,24 @@ var TimeLine = React.createClass({
           <rect x={command.time} y={command.payed ? -command.price : 0} height={command.price} width={command.duration} fill ='red'/>
       );
     };
-    var time = this.state.hours * 60 + this.state.min;
+    var time = this.props.time.hours * 60 + this.props.time.min;
+    console.log(this.props);
     var d = 'M' + time + ',-100 v200';
     return (
     <div className='timeline'>
       <svg className= 'command' viewBox="0 -100 1440 200">
-
-        <rect x='0' y='-100' width={this.state.hours * 60 + this.state.min} height='200' fill = 'rgba(0, 0, 0, 0.8)'/>
-        <rect x={this.state.hours * 60 + this.state.min} y='-100' width={1440 - (this.state.hours * 60 + this.state.min)} height='200' fill = 'rgba(255, 255, 255, 0.8)'/>
+        <rect x='0' y='-100' width={this.props.time.hours * 60 + this.props.time.min} height='200' fill = 'rgba(0, 0, 0, 0.8)'/>
+        <rect x={this.props.time.hours * 60 + this.props.time.min} y='-100' width={1440 - (this.props.time.hours * 60 + this.props.time.min)} height='200' fill = 'rgba(255, 255, 255, 0.8)'/>
         <path d='M0,0 H1440' stroke = 'black' strokeWidth = '1'/>
-        <path d={d} stroke = 'grey' strokeWidth = '4' />
+        <path className = 'cursor' d={d} stroke = 'grey' strokeWidth = '4' />
       {this.state.commands.map(createCommands)}
       </svg>
     </div>
   );
   }
 });
+
+var CommandLayout = require('../famous-modifier/commandlayout');
 
 var Dashboard = React.createClass({
 
@@ -500,52 +501,69 @@ var Dashboard = React.createClass({
     return state;
   },
 
-  componentDidMount: function () {
+  onScroll: function (e, i) {
+    console.log(e);
+  },
+
+  componentWillMount: function () {
     var com = commands.sort(function(a, b) {
         if (a.time < b.time) return -1;
         if (a.time > b.time) return 1;
         return 0;
     });
     this.setState({commands: com});
+  },
 
-    var bodyHeight = document.querySelector('.body').clientHeight;
-    var TimelineHeight = document.querySelector('.timeline').clientHeight;
-    var height = bodyHeight-TimelineHeight;
-    console.log(bodyHeight, document.querySelector('.body'));
-    this.getDOMNode().style.height = height + 'px';
+  componentDidMount: function () {
+    var childs = this.getDOMNode().children;
+    var dashboardView = famousContext.add(this.getDOMNode());
+    var time = this.props.time.hours * 60 + this.props.time.min;
+    console.log(time*25);
+    this.getDOMNode().scrollTop = time * 25;
+    dashboardView.setModifier(CommandLayout);
+    dashboardView.set(childs);
   },
 
   render: function () {
-    console.log(this.state.commands);
-    var createCommands = function (command) {
-      var createDetail = function (detail) {
-        return (
-          <div className = 'detail'>
-            <img src='detail.picture'/>
-            {detail.name}
-          </div>
-        );
-      };
-      var getTime = function(time) {
-        var hours = Math.floor(time/60);
-        var min = Math.round((time/60 - hours) * 60);
-        min = min < 10 ? '0' + min : min;
-        return hours < 12 ? hours + ':' + min + 'AM' :  hours + ':' + min + 'PM';
-      };
+    var createCommands = function (command, index) {
+      return <Command key={index} command={command}/>;
+    };
+    return (
+    <ReactTransitionGroup component='div' className = "dashboard" onScroll = {this.onScroll}>
+      {this.state.commands.map(createCommands)}
+    </ReactTransitionGroup>
+  );
+  }
+});
+
+var Command = React.createClass({
+
+  componentDidMount: function () {
+  },
+  render: function () {
+    var co = this.props.command;
+    var createDetail = function (detail) {
       return (
-        <div className = 'command'>
-          <h1>Mr Dupond<span className='price'>{command.price + ' BitCoin'}</span><span className='time'>{getTime(command.time)}</span></h1>
-          <div className = 'details'>
-            {command.details.map(createDetail)}
-          </div>
+        <div className = 'detail'>
+          <img src='detail.picture'/>
+          {detail.name}
         </div>
       );
     };
+    var getTime = function(time) {
+      var hours = Math.floor(time/60);
+      var min = Math.round((time/60 - hours) * 60);
+      min = min < 10 ? '0' + min : min;
+      return hours < 12 ? hours + ':' + min + 'AM' :  hours + ':' + min + 'PM';
+    };
     return (
-    <div className = "dashboard">
-      {this.state.commands.map(createCommands)}
-    </div>
-  );
+      <div className = 'command' data-time = {co.time}>
+        <h1>Mr Dupond<span className='price'>{co.price + ' BitCoin'}</span><span className='time'>{getTime(co.time)}</span></h1>
+        <div className = 'details'>
+          {co.details.map(createDetail)}
+        </div>
+      </div>
+    );
   }
 });
 

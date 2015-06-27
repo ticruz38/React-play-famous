@@ -103,31 +103,40 @@ form#login span.close-icon {
 /* line 3, ../sass/_openarestaurant.scss */
 div.third svg.command {
   border: 1px solid black;
-  overflow: visible;
+  cursor: pointer;
 }
 /* line 6, ../sass/_openarestaurant.scss */
-div.third svg.command path {
-  marker-end: url(#markerArrow);
+div.third svg.command .cursor {
+  cursor: col-resize;
 }
-/* line 11, ../sass/_openarestaurant.scss */
+/* line 10, ../sass/_openarestaurant.scss */
+div.third div.dashboard {
+  height: 80%;
+  overflow: scroll;
+}
+/* line 13, ../sass/_openarestaurant.scss */
 div.third div.dashboard h1 {
   font-size: 1em;
   text-align: center;
 }
-/* line 15, ../sass/_openarestaurant.scss */
+/* line 17, ../sass/_openarestaurant.scss */
 div.third div.dashboard .time {
   float: right;
 }
-/* line 18, ../sass/_openarestaurant.scss */
+/* line 20, ../sass/_openarestaurant.scss */
 div.third div.dashboard .price {
   float: left;
 }
-/* line 22, ../sass/_openarestaurant.scss */
+/* line 23, ../sass/_openarestaurant.scss */
+div.third div.dashboard div.command {
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 36000, 0, 1);
+}
+/* line 27, ../sass/_openarestaurant.scss */
 div.third div.timeline {
   margin-top: 1em;
 }
 
-/* line 28, ../sass/_openarestaurant.scss */
+/* line 33, ../sass/_openarestaurant.scss */
 div.openarestaurant .plus-icon {
   background-image: url("/public/icons/plus-icon.jpg");
   background-repeat: no-repeat;
@@ -136,7 +145,7 @@ div.openarestaurant .plus-icon {
   height: 1em;
   cursor: pointer;
 }
-/* line 36, ../sass/_openarestaurant.scss */
+/* line 41, ../sass/_openarestaurant.scss */
 div.openarestaurant div.slide {
   position: relative;
   font-size: 2vmin;
@@ -144,7 +153,7 @@ div.openarestaurant div.slide {
   margin: 1em;
   background-color: slategrey;
 }
-/* line 42, ../sass/_openarestaurant.scss */
+/* line 47, ../sass/_openarestaurant.scss */
 div.openarestaurant div.slide a.item {
   border: 1px solid black;
   width: 10%;
@@ -152,47 +161,47 @@ div.openarestaurant div.slide a.item {
   background-color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
-/* line 49, ../sass/_openarestaurant.scss */
+/* line 54, ../sass/_openarestaurant.scss */
 div.openarestaurant div.slide a.active {
   flex-grow: 1.5;
   background-color: rgba(255, 255, 255, 0.8);
 }
-/* line 53, ../sass/_openarestaurant.scss */
+/* line 58, ../sass/_openarestaurant.scss */
 div.openarestaurant div.slide svg.pointer {
   width: 8em;
 }
-/* line 56, ../sass/_openarestaurant.scss */
+/* line 61, ../sass/_openarestaurant.scss */
 div.openarestaurant div.slide svg.arrow, div.openarestaurant div.slide svg.arrow.right, div.openarestaurant div.slide svg.arrow.left {
   width: 4em;
   top: 1em;
   padding: 1em;
   position: absolute;
 }
-/* line 63, ../sass/_openarestaurant.scss */
+/* line 68, ../sass/_openarestaurant.scss */
 div.openarestaurant div.slide svg.right.arrow {
   right: 1em;
 }
-/* line 67, ../sass/_openarestaurant.scss */
+/* line 72, ../sass/_openarestaurant.scss */
 div.openarestaurant div.slide svg.left.arrow {
   left: 1em;
 }
-/* line 72, ../sass/_openarestaurant.scss */
+/* line 77, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container {
   display: block;
   text-align: center;
   margin: 1em;
   font-size: 3vmin;
 }
-/* line 77, ../sass/_openarestaurant.scss */
+/* line 82, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: left;
 }
-/* line 81, ../sass/_openarestaurant.scss */
+/* line 86, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus h1 {
   margin: 0.5em 0 0 0.75em;
 }
-/* line 84, ../sass/_openarestaurant.scss */
+/* line 89, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus span.close-icon {
   background-image: url("/public/icons/close.svg");
   width: 2vmin;
@@ -201,12 +210,12 @@ div.openarestaurant div.list-container div.focus span.close-icon {
   display: table-cell;
   position: absolute;
 }
-/* line 93, ../sass/_openarestaurant.scss */
+/* line 98, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus img {
   position: absolute;
   margin-left: 1.5em;
 }
-/* line 97, ../sass/_openarestaurant.scss */
+/* line 102, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus input {
   font-size: 2em;
   font-family: inherit;
@@ -215,51 +224,51 @@ div.openarestaurant div.list-container div.focus input {
   width: 9em;
   margin: 0.5em 0 0 0.75em;
 }
-/* line 105, ../sass/_openarestaurant.scss */
+/* line 110, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus div.description {
   width: 50%;
   left: 50%;
   position: absolute;
 }
-/* line 109, ../sass/_openarestaurant.scss */
+/* line 114, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus div.description textarea {
   font-family: inherit;
   width: 100%;
   font-size: 0.5em;
   height: 8em;
 }
-/* line 115, ../sass/_openarestaurant.scss */
+/* line 120, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus div.description p {
   width: 100%;
   font-size: 0.5em;
   height: 8em;
   margin: 0;
 }
-/* line 121, ../sass/_openarestaurant.scss */
+/* line 126, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.focus div.description h2 {
   margin: 0;
 }
-/* line 126, ../sass/_openarestaurant.scss */
+/* line 131, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item {
   margin-bottom: 1em;
   width: 30%;
   height: 8em;
   overflow: hidden;
 }
-/* line 132, ../sass/_openarestaurant.scss */
+/* line 137, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item h1 {
   margin: 0;
   font-size: 1em;
   backface-visibility: hidden;
   background-color: rgba(255, 255, 255, 0.8);
 }
-/* line 138, ../sass/_openarestaurant.scss */
+/* line 143, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item input {
   font-size: 1em;
   width: 60%;
   border: none;
 }
-/* line 143, ../sass/_openarestaurant.scss */
+/* line 148, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item span.close-icon {
   background-image: url("/public/icons/close.svg");
   width: 1em;
@@ -268,14 +277,14 @@ div.openarestaurant div.list-container div.card-item span.close-icon {
   display: table-cell;
   position: absolute;
 }
-/* line 152, ../sass/_openarestaurant.scss */
+/* line 157, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item .unvisible {
   position: absolute;
   width: 0;
   margin-top: 2em;
   z-index: -1;
 }
-/* line 158, ../sass/_openarestaurant.scss */
+/* line 163, ../sass/_openarestaurant.scss */
 div.openarestaurant div.list-container div.card-item img {
   width: 100%;
   height: 80%;

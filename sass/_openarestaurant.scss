@@ -2,12 +2,14 @@ $bgColor: rgba(255, 255, 255, 0.8);
 div.third {
   svg.command {
     border: 1px solid black;
-    overflow: visible;
-    path {
-      marker-end : url(#markerArrow);
+    cursor: pointer;
+    .cursor {
+      cursor: col-resize;
     }
   }
   div.dashboard {
+    height: 80%;
+    overflow: scroll;
     h1 {
       font-size: 1em;
       text-align: center;
@@ -17,6 +19,9 @@ div.third {
     }
     .price {
       float: left;
+    }
+    div.command {
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 36000, 0, 1);
     }
   }
   div.timeline {
