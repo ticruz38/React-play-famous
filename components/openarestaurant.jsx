@@ -463,6 +463,19 @@ var TimeLine = React.createClass({
 
   mixins: [FluxibleMixin],
 
+  onWheel: function (event) {
+    event.preventDefault();
+    dashboardView.modifier.updateX(event.deltaX / 2);
+  },
+
+  onClick: function (event) {
+    var margin = 8;
+    var width = this.getDOMNode().clientWidth;
+    var x = ((event.clientX - margin) / width) * 1440;
+    dashboardView.modifier.setX(x);
+    console.log(width, event.clientX, event.pageX);
+  },
+
   componentWillMount: function () {
     this.setState({commands: commands});
   },
@@ -475,14 +488,13 @@ var TimeLine = React.createClass({
     };
     var time = this.props.time.hours * 60 + this.props.time.min;
     console.log(this.props);
-    var d = 'M' + time + ',-100 v200';
     return (
     <div className='timeline'>
-      <svg className= 'command' viewBox="0 -100 1440 200">
-        <rect x='0' y='-100' width={this.props.time.hours * 60 + this.props.time.min} height='200' fill = 'rgba(0, 0, 0, 0.8)'/>
+      <svg className= 'command' viewBox="0 -100 1440 200" onWheel = {this.onWheel} onClick = {this.onClick}>
+        <rect x='0' y='-100' width={time} height='200' fill = 'rgba(0, 0, 0, 0.8)'/>
         <rect x={this.props.time.hours * 60 + this.props.time.min} y='-100' width={1440 - (this.props.time.hours * 60 + this.props.time.min)} height='200' fill = 'rgba(255, 255, 255, 0.8)'/>
         <path d='M0,0 H1440' stroke = 'black' strokeWidth = '1'/>
-        <path className = 'cursor' d={d} stroke = 'grey' strokeWidth = '4' />
+        <rect className = 'cursor' x={time} y='-100' width='20' height='200' fill = 'grey'/>
       {this.state.commands.map(createCommands)}
       </svg>
     </div>
@@ -491,6 +503,8 @@ var TimeLine = React.createClass({
 });
 
 var CommandLayout = require('../famous-modifier/commandlayout');
+
+var dashboardView;
 
 var Dashboard = React.createClass({
 
@@ -501,8 +515,9 @@ var Dashboard = React.createClass({
     return state;
   },
 
-  onScroll: function (e, i) {
-    console.log(e);
+  onScroll: function (event) {
+    event.preventDefault();
+    dashboardView.modifier.update(event.deltaY);
   },
 
   componentWillMount: function () {
@@ -516,12 +531,14 @@ var Dashboard = React.createClass({
 
   componentDidMount: function () {
     var childs = this.getDOMNode().children;
-    var dashboardView = famousContext.add(this.getDOMNode());
+    dashboardView = famousContext.add(this.getDOMNode());
     var time = this.props.time.hours * 60 + this.props.time.min;
-    console.log(time*25);
-    this.getDOMNode().scrollTop = time * 25;
+    //this.getDOMNode().scrollTop = time * 25;
+    this.getDOMNode().style.top = document.querySelector("#app").clientHeight + 25;
     dashboardView.setModifier(CommandLayout);
     dashboardView.set(childs);
+    //dashboardView.transitionable.transform.setTranslate([0, time*25, 0]);
+    dashboardView.modifier.set(time * 25);
   },
 
   render: function () {
@@ -529,8 +546,10 @@ var Dashboard = React.createClass({
       return <Command key={index} command={command}/>;
     };
     return (
-    <ReactTransitionGroup component='div' className = "dashboard" onScroll = {this.onScroll}>
+    <ReactTransitionGroup component='div' className = "dashboard" onWheel = {this.onScroll}>
+      <div className = 'container'>
       {this.state.commands.map(createCommands)}
+      </div>
     </ReactTransitionGroup>
   );
   }
@@ -539,6 +558,8 @@ var Dashboard = React.createClass({
 var Command = React.createClass({
 
   componentDidMount: function () {
+    var time = this.getDOMNode().getAttribute('data-time');
+    this.getDOMNode().style.transform = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, '+time * 25+', 0, 1)';
   },
   render: function () {
     var co = this.props.command;

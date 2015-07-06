@@ -8,8 +8,10 @@ div.third {
     }
   }
   div.dashboard {
-    height: 80%;
-    overflow: scroll;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    bottom: 0;
     h1 {
       font-size: 1em;
       text-align: center;
@@ -21,7 +23,9 @@ div.third {
       float: left;
     }
     div.command {
-      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 36000, 0, 1);
+      position: absolute;
+      width: 100%;
+      background-color: rgba(225, 244, 148, 0.41);
     }
   }
   div.timeline {
