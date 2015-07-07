@@ -1,7 +1,11 @@
 div.open {
-  font-size: 1em;
+  font-size: 2em;
   margin: 0.5em;
   text-align: center;
+  div.error {
+    //font-size: 1em;
+    text-align: center;
+  }
   input.open, textarea.open {
     padding: none !important;
     width: 50%;

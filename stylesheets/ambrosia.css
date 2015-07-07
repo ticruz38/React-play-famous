@@ -296,18 +296,22 @@ div.openarestaurant div.list-container div.card-item img {
 
 /* line 1, ../sass/_restaurantname.scss */
 div.open {
-  font-size: 1em;
+  font-size: 2em;
   margin: 0.5em;
   text-align: center;
 }
 /* line 5, ../sass/_restaurantname.scss */
+div.open div.error {
+  text-align: center;
+}
+/* line 9, ../sass/_restaurantname.scss */
 div.open input.open, div.open textarea.open {
   padding: none !important;
   width: 50%;
   font-size: inherit;
   margin: 0.5em;
 }
-/* line 11, ../sass/_restaurantname.scss */
+/* line 15, ../sass/_restaurantname.scss */
 div.open span {
   background-color: rgba(255, 255, 255, 0.8);
 }

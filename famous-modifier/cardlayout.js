@@ -48,9 +48,8 @@ Modifier.prototype.setState = function(context, elements) {
   if (!context) return;
   console.log(context, elements.length);
   this.size = context;
-  var trans = (this.elements.length !== this.length) ? transition : null;
+  var trans = (this.elements.length !== elements.length) ? transition : null;
   this.elements = elements;
-  this.length = this.elements.length;
   this.activeState(trans);
 };
 

@@ -16,8 +16,9 @@ var Link = Router.Link;
 
 //var data = require('../data/food.json');
 
-var field = {};
+let field = {};
 
+let error = {};
 
 var Open = {};
 
@@ -57,9 +58,9 @@ Open.firstStep = React.createClass({
       callback();
     },
     willTransitionFrom: function (transition, component) {
-      console.log(transition);
       var path = new RegExp(transition.path);
-      if(path.test('step')) {
+      console.log(path);
+      if(path.test('/open/2nd-step')) {
         if(!component.isFilled()) transition.abort();
       }
     }
@@ -73,9 +74,21 @@ Open.firstStep = React.createClass({
     var node = this.getDOMNode();
     var name = node.querySelector('input#restaurant-name').value;
     var food = node.querySelector('input#food-type').value;
-    if(!re.test(name) || !re.test(food)) {
+    if(!re.test(name)) {
+      error.name = <div className='error'>your restaurant name should contain between 2 and 20 letters</div>;
+      error.type = undefined;
+      if(!re.test(food)) {
+        error.type = <div className='error'>please write a type for your restaurant</div>;
+      }
+      this.forceUpdate();
+      return false;
+    } else if (!re.test(food)) {
+      error.name = undefined;
+      error.type = <div className='error'>please write a type for your restaurant</div>;
+      this.forceUpdate();
       return false;
     } else {
+      error = {};
       field.name = name;
       field.food = food;
       return true;
@@ -86,8 +99,12 @@ Open.firstStep = React.createClass({
     return(
       <div className = 'openarestaurant'>
         <Slide to='/open/2nd-step' from='/' title='1st Step' index = {0} description='register your business'/>
-        <div className='open'>Restaurant Name<br/><input id='restaurant-name' className='open' type='text'/></div><br/>
-        <div className='open'>Type of Food<br/><input id='food-type' className='open' type='text'/></div><br/>
+        <div className='open'>Restaurant Name<br/>
+        {error.name}
+        <input id='restaurant-name' className='open' type='text'/></div><br/>
+        <div className='open'>Type of Food<br/>
+        {error.type}
+        <input id='food-type' className='open' type='text'/></div><br/>
         <div className='open'>Brief description<br/>
           <textarea id='description' className='brief-description open'>
           </textarea>
