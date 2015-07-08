@@ -59,7 +59,6 @@ Open.firstStep = React.createClass({
     },
     willTransitionFrom: function (transition, component) {
       var path = new RegExp(transition.path);
-      console.log(path);
       if(path.test('/open/2nd-step')) {
         if(!component.isFilled()) transition.abort();
       }
@@ -72,8 +71,9 @@ Open.firstStep = React.createClass({
   isFilled: function () {
     var re = /^[a-z]{2,8}$/i;
     var node = this.getDOMNode();
-    var name = node.querySelector('input#restaurant-name').value;
-    var food = node.querySelector('input#food-type').value;
+    const name = node.querySelector('input#restaurant-name').value;
+    const food = node.querySelector('input#food-type').value;
+    const description = node.querySelector('textarea#brief-description').value;
     if(!re.test(name)) {
       error.name = <div className='error'>your restaurant name should contain between 2 and 20 letters</div>;
       error.type = undefined;
@@ -89,8 +89,7 @@ Open.firstStep = React.createClass({
       return false;
     } else {
       error = {};
-      field.name = name;
-      field.food = food;
+      this.getStore(ProStore).credentials({name: name, food: food, description: description});
       return true;
     }
   },

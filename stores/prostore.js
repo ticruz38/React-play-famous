@@ -12,6 +12,11 @@ var ProStore = createStore({
   },
 
   initialize: function() {
+    this.credentials = {
+      name: '',
+      genre: '',
+      description: ''
+    };
     this.items = [{
       name: 'drink',
       picture: '/public/images/drink.jpg',
@@ -23,6 +28,14 @@ var ProStore = createStore({
       id: 'abcd'
     }];
     this.focus = null;
+  },
+
+  credentials: function(credentials) {
+    this.credentials = {
+      name: credentials.name,
+      genre: credentials.genre,
+      description: credentials.description
+    };
   },
 
   remove: function(id, focus) {
