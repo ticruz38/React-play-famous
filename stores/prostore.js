@@ -71,6 +71,7 @@ var ProStore = createStore({
 
   getState: function() {
     return {
+      credentials: this.credentials,
       items: this.items,
       focus: this.focus
     };
