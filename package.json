@@ -3,11 +3,31 @@
   "version": "0.0.0",
   "license": "MIT",
   "devDependencies": {
-    "express": "^4.12.2",
-    "famous": "^0.3.5",
-    "react": "^0.13.0",
-    "reactify": "^1.1.0",
-    "watchify": "^2.4.0"
+    "babel-loader": "^4.0.0",
+    "browserify": "^10.2.4",
+    "bundle-loader": "~0.5.0",
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-concurrent": "~1.0.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-nodemon": "~0.3.0",
+    "grunt-webpack": "^1.0.8",
+    "gulp": "^3.9.0",
+    "gulp-util": "*",
+    "gulp-sourcemaps": "*",
+    "lodash": "*",
+    "jest-cli": "^0.4.0",
+    "jscs": "^1.9.0",
+    "jshint": "^2.5.11",
+    "json-loader": "~0.5.1",
+    "nodemon": "^1.2.1",
+    "precommit-hook": "^1.0.7",
+    "vinyl-buffer": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "^3.2.3",
+    "webpack": "^1.4.12",
+    "webpack-dev-server": "^1.6.5"
   },
   "browserify": {
     "transform": [
@@ -16,12 +36,10 @@
   },
   "main": "app.js",
   "scripts": {
-    "build": "browserify app.js -o bundle.js",
-    "watch": "watchify app.js -o bundle.js --debug --verbose"
+    "dev": "grunt",
+    "lint": "grunt jshint",
+    "test": "jest"
   },
-  "name": "ambrosia",
-  "version": "0.0.0",
-  "license": "MIT",
   "dependencies": {
     "babel": "^4.6.3",
     "babel-core": "^4.7.16",
@@ -43,29 +61,5 @@
     "serialize-javascript": "^1.0.0",
     "serve-favicon": "^2.1.6",
     "superagent": "^1.1.0"
-  },
-  "devDependencies": {
-    "babel-loader": "^4.0.0",
-    "bundle-loader": "~0.5.0",
-    "grunt": "~0.4.5",
-    "grunt-cli": "~0.1.13",
-    "grunt-concurrent": "~1.0.0",
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-nodemon": "~0.3.0",
-    "grunt-webpack": "^1.0.8",
-    "jest-cli": "^0.4.0",
-    "jscs": "^1.9.0",
-    "jshint": "^2.5.11",
-    "json-loader": "~0.5.1",
-    "nodemon": "^1.2.1",
-    "precommit-hook": "^1.0.7",
-    "webpack": "^1.4.12",
-    "webpack-dev-server": "^1.6.5"
-  },
-  "scripts": {
-    "dev": "grunt",
-    "lint": "grunt jshint",
-    "test": "jest"
   }
 }

@@ -21,7 +21,7 @@ var server = express();
 expressState.extend(server);
 
 // server.use('/', express.static(__dirname));
-server.use('/build', express.static(__dirname + '/build'));
+server.use('/dist', express.static(__dirname + '/dist'));
 server.use('/styles', express.static(__dirname + '/stylesheets'));
 server.use('/public', express.static(__dirname + '/public'));
 server.use(bodyParser.json());

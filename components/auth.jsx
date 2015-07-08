@@ -8,8 +8,8 @@
 var React = require('react');
 var ReactTransitionGroup = React.addons.TransitionGroup;
 var AuthStore = require('../stores/authstore.js');
-var Login = require('./login');
-var loggedIn = require('./loggedIn');
+var Login = require('./login.jsx');
+var loggedIn = require('./loggedIn.jsx');
 var authModifier = require('../famous-modifier/authlayout');
 var Easing = require('famous/transitions/Easing');
 

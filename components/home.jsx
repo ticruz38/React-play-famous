@@ -7,8 +7,7 @@ var AmbrosiaStore = require('../stores/AmbrosiaStore');
 var AuthStore = require('../stores/authstore');
 var Auth = require('./auth.jsx');
 var FluxibleMixin = require('fluxible').FluxibleMixin;
-var SvgButton = require('./svgbutton');
-var Menu = require('./menu');
+var SvgButton = require('./svgbutton.jsx');
 //var AuthAction = require('../actions/auth');
 var RouteHandler = require('react-router').RouteHandler;
 
