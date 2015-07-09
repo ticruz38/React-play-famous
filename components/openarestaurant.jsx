@@ -54,7 +54,7 @@ var Slide = React.createClass({
 Open.firstStep = React.createClass({
   statics: {
     willTransitionTo: function (transition, params, query, callback) {
-      console.log('transitionTo 1ssssst step', transition);
+      console.log('transitionTo 1st step', transition);
       callback();
     },
     willTransitionFrom: function (transition, component) {
@@ -72,49 +72,52 @@ Open.firstStep = React.createClass({
   },
 
   componentDidMount: function () {
-    console.log('componentDidMount');
   },
 
   isFilled: function () {
     var re = /^[a-z]{2,8}$/i;
     var node = this.getDOMNode();
     const name = node.querySelector('input#restaurant-name').value;
-    const food = node.querySelector('input#food-type').value;
-    const description = node.querySelector('textarea#brief-description').value;
+    const genre = node.querySelector('input#food-type').value;
+    const description = node.querySelector('textarea#description').value;
     if(!re.test(name)) {
       error.name = <div className='error'>your restaurant name should contain between 2 and 20 letters</div>;
       error.type = undefined;
-      if(!re.test(food)) {
+      if(!re.test(genre)) {
         error.type = <div className='error'>please write a type for your restaurant</div>;
       }
       this.forceUpdate();
       return false;
-    } else if (!re.test(food)) {
+    } else if (!re.test(genre)) {
       error.name = undefined;
       error.type = <div className='error'>please write a type for your restaurant</div>;
       this.forceUpdate();
       return false;
     } else {
       error = {};
-      this.getStore(ProStore).credentials({name: name, food: food, description: description});
+      this.getStore(ProStore).credential({name: name, genre: genre, description: description});
       return true;
     }
   },
 
+  fill: function (event, key) {
+    this.state.credentials[key] = event.target.value;
+    this.forceUpdate();
+  },
+
   render: function () {
     const credentials = this.state.credentials;
-    console.log('render', credentials);
     return(
       <div className = 'openarestaurant'>
         <Slide to='/open/2nd-step' from='/' title='1st Step' index = {0} description='register your business'/>
         <div className='open'>Restaurant Name<br/>
         {error.name}
-        <input id='restaurant-name' className='open' type='text' value={credentials.name}/></div><br/>
+        <input id='restaurant-name' className='open' type='text' onChange={function(e) {this.fill(e, 'name')}.bind(this)} value={credentials.name}/></div><br/>
         <div className='open'>Type of Food<br/>
         {error.type}
-        <input id='food-type' className='open' type='text' value={credentials.genre}/></div><br/>
+        <input id='food-type' className='open' type='text' onChange={function(e) {this.fill(e, 'genre')}.bind(this)} value={credentials.genre}/></div><br/>
         <div className='open'>Brief description<br/>
-          <textarea id='description' className='brief-description open'>
+          <textarea id='description' className='brief-description open' onChange={function(e) {this.fill(e, 'description')}.bind(this)}>
             {credentials.description}
           </textarea>
         </div><br/>
@@ -132,9 +135,6 @@ Open.secondStep = React.createClass({
   mixins: [FluxibleMixin],
 
   statics: {
-    storeListeners: {
-      _onChange: [ProStore]
-    },
     willTransitionTo: function (transition, params, query, callback) {
       callback();
     },
@@ -143,7 +143,7 @@ Open.secondStep = React.createClass({
       //   component.getS
       // }
       //component.executeAction('')
-      console.log('transitionfrom 2nd step', transition, component.getStore(ProStore));
+      //console.log('transitionfrom 2nd step', transition, component.getStore(ProStore));
     }
   },
 
@@ -188,7 +188,7 @@ Open.thirdStep = React.createClass({
   render: function () {
     return(
       <div className = 'openarestaurant third'>
-        <Slide to='/' from='/open/2nd-step' title='3rd Step' index= {2} description = 'Here is your dashboard'/>
+        <Slide to='/home' from='/open/2nd-step' title='3rd Step' index= {2} description = 'Here is your dashboard'/>
         <div>
           <TimeLine time = {this.state}/>
           <Dashboard time = {this.state}/>
@@ -302,11 +302,11 @@ var Dashboard = React.createClass({
       return <Command key={index} command={command}/>;
     };
     return (
-    <ReactTransitionGroup component='div' className = "dashboard" onWheel = {this.onScroll}>
+    <div className = "dashboard" onWheel = {this.onScroll}>
       <div className = 'container'>
       {this.state.commands.map(createCommands)}
       </div>
-    </ReactTransitionGroup>
+    </div>
   );
   }
 });

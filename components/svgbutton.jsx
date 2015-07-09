@@ -7,7 +7,6 @@ var React = require('react/addons');
 var Button = React.createClass({
 
   onBurgerClicked: function () {
-    MenuLayout.switchState();
   },
 
   render: function () {

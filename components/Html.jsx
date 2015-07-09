@@ -32,7 +32,7 @@ var Html = React.createClass({
                 <div id="app" className='' dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
             </body>
             <script dangerouslySetInnerHTML={{__html: this.props.state}}></script>
-            <script src="/dist/bundle.js" defer></script>
+            <script src="/build/js/main.js" defer></script>
             </html>
         );
     }

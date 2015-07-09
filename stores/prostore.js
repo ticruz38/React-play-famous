@@ -30,7 +30,8 @@ var ProStore = createStore({
     this.focus = null;
   },
 
-  credentials: function(credentials) {
+  credential: function(credentials) {
+    console.log('credential');
     this.credentials = {
       name: credentials.name,
       genre: credentials.genre,

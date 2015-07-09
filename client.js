@@ -15,7 +15,6 @@ debug.enable('*');
 
 bootstrapDebug('rehydrating app', dehydratedState);
 
-
 //famous stuff
   var View = require('./famous-helpers/view');
   var Engine = require('famous/core/Engine');

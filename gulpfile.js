@@ -7,24 +7,29 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
-var assign = require('lodash').assign;
+var _ = require('lodash');
+
+var paths = {
+  scripts: ['./components/**/*.jsx', './stores/**/*.js']
+};
 
 // add custom browserify options here
 var customOpts = {
   entries: ['./client.js'],
   debug: true
 };
-var opts = assign({}, watchify.args, customOpts);
+var opts = _.assign({}, watchify.args, customOpts);
 var b = watchify(browserify(opts));
-b.on('update', bundle); // on any dep update, runs the bundler
-b.on('log', gutil.log); // output build logs to terminal
-
-
+//b.on('log', gutil.log); // output build logs to terminal
 // add transformations here
 // i.e. b.transform(coffeeify);
 
-gulp.task('js', bundle); // so you can run `gulp js` to build the file
+gulp.task('js', ['watch'], bundle); // so you can run `gulp js` to build the file
 gulp.task('default', ['js'], nodemon);
+
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['js']);
+});
 
 function nodemon() {
   nodemon({

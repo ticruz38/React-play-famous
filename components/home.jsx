@@ -39,29 +39,14 @@ var Home = React.createClass({
     },
 
     componentDidMount: function () {
-
+      console.log('home');
     },
 
     onBurgerClicked: function () {
+      console.log(event);
     },
 
     logStatus: function () {
-      var state;
-      if(this.state.auth.logged) {
-        state = <span className='logged-in-button'>logged in with {this.state.auth.loginDetails.mail}</span>;
-        if(this.state.auth.loginDetails.pseudo) {
-          state = <span className='log'>Welcome {this.state.auth.loginDetails.pseudo}</span>;
-            if(this.state.auth.loginDetails.picture) {
-              state = <div className='profile'>
-                        <span className='log'>logged in as {this.state.auth.loginDetails.pseudo}</span>
-                        <img src={this.state.auth.loginDetails.picture}/>
-                      </div>;
-            }
-        }
-      } else {
-          state = null;
-        }
-      return state;
     },
     render: function () {
         return (
