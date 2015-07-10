@@ -17,7 +17,6 @@ var Pro = React.createClass({
 
   componentDidMount: function () {
     this.getStore(AuthStore).fillIt(false);
-    MainLayout.searchState();
   },
 
   getInitialState: function () {

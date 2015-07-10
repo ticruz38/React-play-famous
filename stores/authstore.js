@@ -12,11 +12,6 @@ var LoginStore = createStore({
         'Login': 'handleLogin',
     },
 
-    fillIt: function (state) {
-      this.fill = state;
-      this.emitChange();
-    },
-
     initialize: function() {
         this.logged = false;
         this.loginDetails = {};
@@ -29,6 +24,11 @@ var LoginStore = createStore({
             loginDetails: this.loginDetails,
             fill: this.fill
         };
+    },
+
+    fillIt: function (state) {
+      this.fill = state;
+      this.emitChange();
     },
 
     handleSignup: function(details) {

@@ -1,24 +1,27 @@
-/* line 1, ../sass/_professional.scss */
+/* line 1, ../sass/_index.scss */
 h1.pro {
-  font-size: 1em;
+  font-size: 1vmin;
 }
 
-/* line 5, ../sass/_professional.scss */
+/* line 5, ../sass/_index.scss */
 div#pro {
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 1em;
+  padding: 2vmin;
 }
-/* line 8, ../sass/_professional.scss */
+/* line 8, ../sass/_index.scss */
 div#pro h1 {
-  font-size: 1em;
+  text-align: center;
+  font-size: 3vmin;
 }
-/* line 11, ../sass/_professional.scss */
+/* line 12, ../sass/_index.scss */
 div#pro h3 {
-  font-size: 0.7em;
+  margin-top: 3vmin;
+  text-align: center;
+  font-size: 2.5vmin;
 }
-/* line 14, ../sass/_professional.scss */
+/* line 17, ../sass/_index.scss */
 div#pro p, div#pro a {
-  font-size: 0.5em;
+  font-size: 2vmin;
 }
 
 /* line 1, ../sass/_auth.scss */

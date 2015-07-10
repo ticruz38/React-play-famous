@@ -5,12 +5,9 @@
 var React = require('react/addons');
 var AmbrosiaStore = require('../stores/AmbrosiaStore');
 var AuthStore = require('../stores/authstore');
-var Auth = require('./auth.jsx');
 var FluxibleMixin = require('fluxible').FluxibleMixin;
-var SvgButton = require('./svgbutton.jsx');
-//var AuthAction = require('../actions/auth');
 var RouteHandler = require('react-router').RouteHandler;
-
+var Navbar = require('./navbar.jsx');
 //var data = require('../data/food.json');
 
 
@@ -51,11 +48,7 @@ var Home = React.createClass({
     render: function () {
         return (
           <div>
-            <div className = 'navbar'>
-              <SvgButton/>
-              <h1 className='ambrosia'>Ambrosia</h1>
-              <Auth/>
-            </div>
+            <Navbar/>
             <div className='body'>
             <RouteHandler/>
             </div>

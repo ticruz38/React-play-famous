@@ -19,7 +19,8 @@ var customOpts = {
   debug: true
 };
 var opts = _.assign({}, watchify.args, customOpts);
-var b = watchify(browserify(opts));
+var b = browserify(customOpts);
+var w = watchify(browserify(opts));
 //b.on('log', gutil.log); // output build logs to terminal
 // add transformations here
 // i.e. b.transform(coffeeify);

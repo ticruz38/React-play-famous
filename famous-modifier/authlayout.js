@@ -17,7 +17,6 @@ Modifier.DEFAULT_OPTIONS = {};
 
 Modifier.prototype.setState = function(context, elements, trans) {
     if (!context || !elements.length) return;
-    console.log(elements);
     this.size = context;
     this.signup = elements[0];
     this.login = elements[1];

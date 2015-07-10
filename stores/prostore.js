@@ -27,11 +27,11 @@ var ProStore = createStore({
       }],
       id: 'abcd'
     }];
+    this.commands = [];
     this.focus = null;
   },
 
   credential: function(credentials) {
-    console.log('credential');
     this.credentials = {
       name: credentials.name,
       genre: credentials.genre,
