@@ -7,24 +7,11 @@ import {
 } from 'graphql/lib/type';
 
 import co from 'co';
-import User from './user';
 
-/**
- * generate projection object for mongoose
- * @param  {Object} fieldASTs
- * @return {Project}
- */
-function getProjection (fieldASTs) {
-  return fieldASTs.selectionSet.selections.reduce((projections, selection) => {
-    projections[selection.name.value] = 1;
-
-    return projections;
-  }, {});
-}
 
 var userType = new GraphQLObjectType({
   name: 'User',
-  description: 'User creator',
+  description: 'User',
   fields: () => ({
     id: {
       type: new GraphQLNonNull(GraphQLString),
@@ -34,7 +21,7 @@ var userType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The name of the user.',
     },
-    friends: {
+    restaurant: {
       type: new GraphQLList(userType),
       description: 'The friends of the user, or an empty list if they have none.',
       resolve: (user, params, source, fieldASTs) => {
