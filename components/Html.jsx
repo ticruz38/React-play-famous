@@ -25,8 +25,8 @@ var Html = React.createClass({
                 <meta charSet="utf-8" />
                 <title></title>
                 <meta name="viewport" content="width=device-width, user-scalable=no" />
-                <link rel="stylesheet" href="/styles/ambrosia.css" />
-                <link rel='stylesheet' href='/styles/famous.css' />
+                <link rel="stylesheet" href="/stylesheets/ambrosia.css" />
+                <link rel='stylesheet' href='/stylesheets/famous.css' />
             </head>
             <body>
                 <div id="app" className='' dangerouslySetInnerHTML={{__html: this.props.markup}}></div>
